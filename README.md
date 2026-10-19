@@ -8,6 +8,8 @@ synthetiques, pas des donnees de marche.
 ## Installation
 
 Python 3.12 et [uv](https://docs.astral.sh/uv/) sont requis.
+Le fichier `uv.toml` place le cache dans `.cache/uv`, un dossier local ignore
+par Git et accessible en ecriture dans l'environnement cloud.
 
 ```bash
 cd /workspace/Luc
