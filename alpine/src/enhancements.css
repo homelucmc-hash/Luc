@@ -1,0 +1,23 @@
+/* Immersive details sit above the photography, with controls kept in front. */
+.reading-progress{position:fixed;inset:0 0 auto;height:2px;background:var(--accent);z-index:80;transform:scaleX(var(--reading-progress,0));transform-origin:left;pointer-events:none}
+.hero-content,.hero-topline,.hero-bottom,.altitude-stamp{z-index:2}
+.hero-progress{z-index:3}
+.desktop-nav{gap:26px;margin-left:20px}
+.mobile-menu{max-height:100dvh;overflow-y:auto;min-height:min(600px,100dvh)}
+.domain-sticky{transition:background 1.2s}
+.domain-sticky[data-light-mode=golden]{--dark:#211e1d;background:var(--dark)}
+.domain-sticky[data-light-mode=night]{--dark:#111b29;background:var(--dark)}
+.domain-sticky[data-light-mode=golden]:before{background:radial-gradient(ellipse,#744e34 0%,transparent 65%)}
+.domain-sticky[data-light-mode=night]:before{background:radial-gradient(ellipse,#23447a 0%,transparent 65%)}
+.scene-light-controls{position:absolute;left:var(--page-gutter);bottom:35%;z-index:4;width:172px}
+.scene-light-controls>span{font-size:7px;letter-spacing:.13em;color:#b3bfc1;display:block;margin-bottom:11px}
+.scene-light-controls>div{display:flex;gap:8px}
+.scene-light-controls button{border:1px solid #ffffff35;color:#b3bfc1;width:48px;min-height:54px;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:7px;transition:border .25s,color .25s,background .25s}
+.scene-light-controls button>span{font-size:6px;letter-spacing:.06em}
+.scene-light-controls button:hover{border-color:#ffffff9c;color:var(--white)}
+.scene-light-controls button[aria-pressed=true]{color:var(--white);background:#ffffff0c;border-color:var(--accent)}
+@media(min-width:1600px){.scene-light-controls>span{font-size:9px}.scene-light-controls button>span{font-size:8px}.scene-light-controls{width:205px}.scene-light-controls button{width:57px;min-height:65px}}
+@media(max-width:1100px){.desktop-nav{gap:18px}.desktop-nav>a{font-size:10px}.scene-light-controls{bottom:35%;width:158px}.scene-light-controls button{width:44px}}
+@media(max-width:800px){.scene-light-controls{bottom:29%;width:150px}.scene-light-controls>span{font-size:6px}.scene-light-controls button{width:42px;min-height:47px}.scene-light-controls>div{gap:7px}}
+@media(max-width:540px){.scene-light-controls{bottom:22%;width:145px;padding:10px;background:#142027cf;backdrop-filter:blur(8px)}.scene-light-controls>span{font-size:5px;letter-spacing:.08em;margin-bottom:8px}.scene-light-controls>div{gap:5px}.scene-light-controls button{width:38px;min-height:44px;gap:5px}.scene-light-controls button>span{font-size:5px}.scene-light-controls button>svg{width:15px;height:15px}.scene-compass{bottom:24%}.hero-topline{z-index:2}}
+@media(prefers-reduced-motion:reduce){.alpine-day{clip-path:none!important}.domain-sticky,.scene-light-controls button{transition:none}}

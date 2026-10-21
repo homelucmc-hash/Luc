@@ -1,0 +1,9 @@
+.mountain-scene{position:relative;width:100%;height:100%;min-height:320px;isolation:isolate;touch-action:pan-y}
+.mountain-scene canvas{display:block;width:100%;height:100%;outline:none}
+.mountain-fallback{position:absolute;inset:0;width:100%;height:100%;filter:drop-shadow(0 32px 28px #0004)}
+.mountain-scene:before{content:'';position:absolute;inset:17% 9% 7%;z-index:-1;opacity:0;border-radius:50%;background:radial-gradient(ellipse,#b8875140,transparent 67%);transition:opacity 1.1s ease,background 1.1s ease;pointer-events:none}
+.mountain-scene[data-light-mode=golden]:before{opacity:.58}
+.mountain-scene[data-light-mode=night]:before{opacity:.65;background:radial-gradient(ellipse,#356ac43b,transparent 67%)}
+.mountain-scene[data-light-mode=golden] .mountain-fallback{filter:sepia(.25) saturate(.8) drop-shadow(0 32px 28px #0004)}
+.mountain-scene[data-light-mode=night] .mountain-fallback{filter:brightness(.65) sepia(.4) hue-rotate(165deg) saturate(1.7) drop-shadow(0 32px 28px #0004)}
+@media(prefers-reduced-motion:reduce){.mountain-scene:before{transition:none}}

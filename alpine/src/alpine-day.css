@@ -1,0 +1,38 @@
+.alpine-day{isolation:isolate;position:relative;height:800px;min-height:690px;max-height:1050px;background:#2a404e;color:var(--white);overflow:hidden;padding:55px var(--page-gutter);scroll-margin-top:78px}
+.day-photos,.day-shade{position:absolute;inset:0;z-index:-1}
+.day-photos{overflow:hidden}
+.day-photos>img{position:absolute;width:100%;height:100%;object-fit:cover;object-position:50% 60%;opacity:0;transform:scale(1.1);filter:saturate(.5);transition:opacity 1.2s var(--ease),transform 8s linear,filter 1.5s}
+.day-photos>img.is-active{opacity:1;transform:scale(1)}
+.alpine-day--1 .day-photos>img{object-position:50% 55%}
+.alpine-day--2 .day-photos>img{filter:saturate(.4) sepia(.35) brightness(.84);object-position:50% 32%}
+.alpine-day--3 .day-photos>img{object-position:50% 50%;filter:saturate(.7)}
+.day-shade{background:linear-gradient(90deg,#0b203da1,transparent 75%),linear-gradient(0deg,#10202ed9,transparent 55%,#10202e55)}
+.day-topline{display:flex;align-items:center;justify-content:space-between;font-size:8px;letter-spacing:.16em;gap:20px}
+.day-intro{position:relative;max-width:600px;z-index:1;margin-top:55px}
+.day-intro h2{font-size:clamp(34px,3.6vw,58px);line-height:1.12;letter-spacing:-.055em}
+.day-intro h2 em{font-family:Georgia,serif;font-weight:400}
+.day-intro>p{font-size:12px;line-height:1.9;margin-top:25px;opacity:.8}
+.day-story{position:absolute;left:var(--page-gutter);bottom:150px;animation:day-story-in .6s var(--ease)}
+.day-story-label{display:flex;align-items:center;gap:10px;font-size:8px;letter-spacing:.15em}
+.day-time{font-family:var(--font-display);font-size:clamp(100px,12.5vw,190px);line-height:1;letter-spacing:-.025em;margin-top:13px;color:transparent;-webkit-text-stroke:1px #ffffffa1}
+.day-story>h3{font-family:Manrope,var(--font-body);font-size:32px;font-weight:700;letter-spacing:-.045em;margin-top:4px}
+.day-story-copy{font-size:12px;line-height:1.8;margin-top:13px;max-width:440px;color:#e2e6e7}
+.day-location{position:absolute;right:var(--page-gutter);bottom:175px;writing-mode:vertical-rl;font-size:7px;letter-spacing:.17em;opacity:.8}
+.day-bottom{display:flex;align-items:center;justify-content:space-between;position:absolute;left:var(--page-gutter);right:var(--page-gutter);bottom:55px;gap:40px}
+.day-moments{display:grid;grid-template-columns:repeat(4,1fr);width:80%;border-top:1px solid #ffffff40}
+.day-moments>button{position:relative;display:flex;align-items:baseline;gap:15px;min-height:55px;padding:20px 10px 0 0;color:#d1d9db;text-align:left}
+.day-moments>button:before{content:'';position:absolute;top:-1px;left:0;width:0;height:2px;background:var(--accent);transition:width .4s var(--ease)}
+.day-moments>button.is-active:before{width:calc(100% - 20px)}
+.day-moments>button>span:nth-child(2){font-size:14px;font-variant-numeric:tabular-nums}
+.moment-dot{width:4px;height:4px;align-self:center;margin-top:-13px;border-radius:50%;background:currentColor;opacity:.5}
+.day-moments>button.is-active{color:var(--white)}
+.day-moments>button.is-active .moment-dot{background:var(--accent);opacity:1}
+.moment-name{font-size:9px;opacity:.65}
+.day-next{border:1px solid #ffffff70;border-radius:50%;width:48px;height:48px;display:grid;place-items:center;transition:background .25s,color .25s}
+.day-next:hover{background:var(--white);color:var(--ink)}
+.day-note{position:absolute;left:var(--page-gutter);bottom:23px;font-size:5.5px;letter-spacing:.14em;opacity:.6}
+@keyframes day-story-in{from{opacity:0;transform:translateY(15px)}to{opacity:1;transform:translateY(0)}}
+@media(min-width:1600px){.alpine-day{height:930px}.day-intro{margin-top:70px}.day-story{bottom:160px}.day-story>h3{font-size:40px}.day-story-copy{font-size:14px}}
+@media(max-width:800px){.alpine-day{height:830px}.day-intro{max-width:430px}.day-story>h3{font-size:28px}.day-moments{width:88%}.moment-name{display:none}.day-bottom{gap:20px}.day-moments>button>span:nth-child(2){font-size:13px}.day-moments>button{gap:10px}}
+@media(max-width:540px){.alpine-day{height:780px;min-height:700px;padding-top:35px;scroll-margin-top:70px}.day-topline{font-size:6px;letter-spacing:.1em;gap:15px}.day-intro{margin-top:43px}.day-intro h2{font-size:34px;max-width:310px}.day-intro>p{font-size:10px;margin-top:19px}.day-story{bottom:155px;right:35px}.day-story-label{font-size:6px;letter-spacing:.12em}.day-time{font-size:115px;margin-top:13px}.day-story>h3{font-size:26px;margin-top:13px;line-height:1.15}.day-story-copy{font-size:11px;margin-top:14px;line-height:1.8;max-width:290px}.day-location{bottom:185px;font-size:5px;right:16px}.day-bottom{bottom:58px;gap:20px}.day-moments{width:calc(100% - 52px)}.day-moments>button{gap:7px;padding-top:17px;min-height:44px}.day-moments>button>span:nth-child(2){font-size:11px}.day-moments>button:before{max-width:calc(100% - 10px)}.moment-dot{width:3px;height:3px}.day-next{width:36px;height:36px}.day-next svg{width:17px;height:17px}.day-note{font-size:4.5px;letter-spacing:.1em;bottom:26px}.day-photos>img{object-position:62% 60%}.alpine-day--1 .day-photos>img{object-position:75% 50%}.alpine-day--3 .day-photos>img{object-position:45% 50%}}
+@media(prefers-reduced-motion:reduce){.day-photos>img{transform:none;transition:none}.day-story{animation:none}}
