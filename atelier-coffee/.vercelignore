@@ -1,0 +1,14 @@
+node_modules
+.next
+out
+.vercel
+production
+references
+reference-code
+reports
+assets
+.agents
+tools
+*.log
+*.tsbuildinfo
+*.zip

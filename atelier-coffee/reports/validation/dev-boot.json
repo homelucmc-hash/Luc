@@ -1,0 +1,15 @@
+{
+  "checkedAt": "2026-10-22T19:24:50.509Z",
+  "status": "passed",
+  "url": "http://127.0.0.1:3003",
+  "errors": [],
+  "badResponses": [],
+  "frameResponses": 160,
+  "hmrSocket": true,
+  "nearStart": {
+    "progress": "0.02222",
+    "pinCount": 1,
+    "top": 0
+  },
+  "finishedAt": "2026-10-22T19:24:56.614Z"
+}

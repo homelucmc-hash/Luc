@@ -1,0 +1,18 @@
+ATELIER COFFEE — REFERENCES VISUELLES POUR CODEX
+
+Ces images sont un STORYBOARD, pas des frames consecutives d’une animation exportee.
+Ne pas les intercaler directement avec des fondus comme si c’etait un flux video : le mouvement du liquide sera incorrect.
+
+01-premiere-goutte.webp : 0% — apparition des premieres gouttes
+02-extraction.webp : 25% — filet de cafe continu, tasse hors champ
+03-versement.webp : 50% — tasse visible, remplissage en cours
+04-tasse-presque-pleine.webp : 75% — tasse presque pleine, flux aminci
+05-revelation-finale.webp : 100% — espresso termine, logo revele
+
+CONSIGNES A CODEX
+- Utiliser ces 5 images pour la direction artistique, la mise en page, les materiaux et la lumiere.
+- Construire une veritable animation reversible au scroll, avec assets video/sequence ou 3D appropriés.
+- Garder les textes et boutons en HTML/CSS, pas imprimes dans une image fixe.
+- Les cinq images ne suffisent pas a fabriquer 120-240 frames continues et cohérentes.
+- Ne jamais lire un binaire d’image avec un outil texte (cat, read_file, etc.).
+- Le dossier de references reste distinct de l'animation de production.

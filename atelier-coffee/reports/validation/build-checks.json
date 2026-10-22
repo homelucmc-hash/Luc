@@ -1,0 +1,31 @@
+{
+  "checkedAt": "2026-10-22T13:34:09.245730+00:00",
+  "commands": [
+    {
+      "command": "npm run check:assets",
+      "exitCode": 0
+    },
+    {
+      "command": "npm run verify:sequence",
+      "exitCode": 0
+    },
+    {
+      "command": "npm run typecheck",
+      "exitCode": 0
+    },
+    {
+      "command": "npm run build",
+      "exitCode": 0
+    }
+  ],
+  "manifest": {
+    "count": 160,
+    "ext": "webp",
+    "width": 1280,
+    "height": 720,
+    "mobileWidth": 800,
+    "source": "Original continuous Blender Cycles espresso render"
+  },
+  "nodeOnlyProductionBuild": true,
+  "note": "Ces contrôles sont structurels. Les preuves de comportement sont dans browser-report.json et la vidéo molette."
+}

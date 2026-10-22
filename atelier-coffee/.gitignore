@@ -1,0 +1,16 @@
+node_modules/
+.next/
+out/
+*.tsbuildinfo
+COFFEE-EXPERIENCE.html
+production/*-review/
+production/final-renders/
+production/renders/
+production/obsolete-crema-bright/
+production/*.log
+production/*.blend1
+__pycache__/
+.vercel/
+.env
+.env.*
+!.env.example

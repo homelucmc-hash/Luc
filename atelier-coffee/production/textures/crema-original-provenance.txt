@@ -1,0 +1,15 @@
+ATELIER COFFEE — TEXTURE DE CREMA ORIGINALE
+Création : 21 octobre 2026, outil image_gen d’OpenAI.
+
+Texture originale générée pour ce projet : crema espresso en vue orthographique du dessus, plein cadre carré, caramel/miel avec tigrures noisette et microbulles périphériques. Aucun bord de tasse, texte, marque ou décor. Éclairage doux diffus sans reflet de fenêtre ni ombre forte.
+
+Usage prévu : base color / albedo d’un matériau liquide Blender, à combiner avec la rugosité, les reflets et l’éclairage de la scène. Le fichier n’est pas une simulation d’écoulement ni une frame de la séquence animée. L’image est générée et ne constitue pas une prise de vue documentaire.
+
+Original généré conservé : /workspace/generated_images/exec-f7d925d0-86f8-45b0-90e6-d218ae64adb4.png
+Dimensions source : 1254 × 1254 PNG.
+Livraison : production/textures/crema-original.png, 1024 × 1024 PNG.
+Traitement : redimensionnement FFmpeg, aucune retouche de contenu.
+SHA-256 source : aa6cb80728ed0e71d0ecb01db306cb7c9e98c05acaba7fe3d0037b7f42a53e45
+SHA-256 livraison : c6ac18ace4db3a7b8eb7a82f3af8ff554c7bf1fbd80a0d899ed965750a3642db
+
+Aucun fichier de site concurrent n’a été récupéré ou utilisé.

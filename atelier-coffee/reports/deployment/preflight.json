@@ -1,0 +1,36 @@
+{
+  "checkedAt": "2026-10-22T20:03:57.280755+00:00",
+  "status": "prepared_not_deployed",
+  "github": {
+    "repository": "homelucmc-hash/Luc",
+    "branch": "codex/atelier-coffee-vercel",
+    "projectDirectory": "atelier-coffee",
+    "gitPushDryRun": "passed",
+    "apiAccess": "blocked"
+  },
+  "vercel": {
+    "framework": "nextjs",
+    "rootDirectory": "atelier-coffee",
+    "installCommand": "npm ci",
+    "buildCommand": "npm run build",
+    "outputDirectory": "Next.js default; no override",
+    "node": "22.x",
+    "accountConfigured": false,
+    "apiReachable": false,
+    "publicUrl": null,
+    "hostedValidation": "not_performed_no_deployment_url"
+  },
+  "validation": {
+    "cleanInstallNode": "22.23.4",
+    "npmCi": "passed",
+    "typecheck": "passed",
+    "build": "passed",
+    "exportPublicFilesSha256": "327 matched",
+    "framesPerVariant": 160,
+    "variants": 2,
+    "lockedDependencyVersionsPreserved": true,
+    "sourceAndImagesPreserved": true,
+    "browserPreflight": "passed; desktop/mobile parity, forward/reverse and pause; no errors"
+  },
+  "note": "Le statut Prepared ne signifie pas qu’un déploiement Vercel est créé."
+}

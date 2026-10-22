@@ -1,0 +1,326 @@
+[
+  {
+    "label": "mobile",
+    "width": 390,
+    "height": 844,
+    "skipFocus": {
+      "className": "skip-link",
+      "outline": "solid"
+    },
+    "story": {
+      "rect": {
+        "x": 0,
+        "y": 90,
+        "width": 390,
+        "height": 1273.578125,
+        "top": 90,
+        "right": 390,
+        "bottom": 1363.578125,
+        "left": 0
+      },
+      "header": {
+        "x": 0,
+        "y": 0,
+        "width": 390,
+        "height": 72,
+        "top": 0,
+        "right": 390,
+        "bottom": 72,
+        "left": 0
+      },
+      "h2": {
+        "x": 27.296875,
+        "y": 255.78125,
+        "width": 335.40625,
+        "height": 192.234375,
+        "top": 255.78125,
+        "right": 362.703125,
+        "bottom": 448.015625,
+        "left": 27.296875
+      }
+    },
+    "arrow": {
+      "active": "profile-tab-soir",
+      "selected": "true",
+      "panelLabel": "profile-tab-soir",
+      "panelText": "Une présence qui reste.\n\nUne texture enveloppante, des notes de cacao et une finale profonde. À déguster jusqu’à la dernière goutte.\n\nNOTES DE DÉGUSTATION\n\nCacao, prune, épices douces.\n\nTORRÉFACTION\nSoutenu\nINTENSITÉ",
+      "outline": "solid",
+      "outlineWidth": "2px"
+    },
+    "home": {
+      "active": "profile-tab-matin",
+      "selected": "true"
+    },
+    "end": {
+      "active": "profile-tab-soir",
+      "selected": "true"
+    },
+    "panelFocus": {
+      "active": "coffee-profile-panel",
+      "role": "tabpanel",
+      "outline": "solid",
+      "outlineWidth": "2px"
+    },
+    "links": [
+      {
+        "text": "Aller à la présentation",
+        "href": "#story",
+        "valid": true
+      },
+      {
+        "text": "ATELIERCOFFEE",
+        "href": "#process",
+        "valid": true
+      },
+      {
+        "text": "PROCESS",
+        "href": "#process",
+        "valid": true
+      },
+      {
+        "text": "OUR COFFEE",
+        "href": "#cafes",
+        "valid": true
+      },
+      {
+        "text": "STORY",
+        "href": "#story",
+        "valid": true
+      },
+      {
+        "text": "DISCOVER",
+        "href": "#cafes",
+        "valid": true
+      },
+      {
+        "text": "DISCOVER OUR COFFEE",
+        "href": "#cafes",
+        "valid": true
+      },
+      {
+        "text": "DISCOVER OUR COFFEE",
+        "href": "#cafes",
+        "valid": true
+      },
+      {
+        "text": "DISCOVER OUR COFFEE",
+        "href": "#cafes",
+        "valid": true
+      },
+      {
+        "text": "DISCOVER OUR COFFEE",
+        "href": "#cafes",
+        "valid": true
+      },
+      {
+        "text": "DÉCOUVRIR NOTRE UNIVERS",
+        "href": "#story",
+        "valid": true
+      },
+      {
+        "text": "DÉCOUVRIR NOS CAFÉS",
+        "href": "#cafes",
+        "valid": true
+      },
+      {
+        "text": "REVIVRE LE RITUEL",
+        "href": "#process",
+        "valid": true
+      },
+      {
+        "text": "ATELIERCOFFEE",
+        "href": "#process",
+        "valid": true
+      },
+      {
+        "text": "BACK TO THE RITUAL",
+        "href": "#process",
+        "valid": true
+      }
+    ],
+    "images": [
+      {
+        "src": "/images/atelier-detail.webp",
+        "width": 1280,
+        "complete": true
+      },
+      {
+        "src": "/images/roast-detail.webp",
+        "width": 1280,
+        "complete": true
+      }
+    ],
+    "dimensions": {
+      "viewport": 390,
+      "scrollWidth": 390
+    },
+    "backTop": {
+      "y": 0,
+      "hash": "#process"
+    },
+    "errors": [],
+    "badAssets": []
+  },
+  {
+    "label": "desktop",
+    "width": 1440,
+    "height": 900,
+    "skipFocus": {
+      "className": "skip-link",
+      "outline": "solid"
+    },
+    "story": {
+      "rect": {
+        "x": 0,
+        "y": 90,
+        "width": 1440,
+        "height": 1089.125,
+        "top": 90,
+        "right": 1440,
+        "bottom": 1179.125,
+        "left": 0
+      },
+      "header": {
+        "x": 0,
+        "y": 0,
+        "width": 1440,
+        "height": 82,
+        "top": 0,
+        "right": 1440,
+        "bottom": 82,
+        "left": 0
+      },
+      "h2": {
+        "x": 100.796875,
+        "y": 396.765625,
+        "width": 472.359375,
+        "height": 291.984375,
+        "top": 396.765625,
+        "right": 573.15625,
+        "bottom": 688.75,
+        "left": 100.796875
+      }
+    },
+    "arrow": {
+      "active": "profile-tab-soir",
+      "selected": "true",
+      "panelLabel": "profile-tab-soir",
+      "panelText": "Une présence qui reste.\n\nUne texture enveloppante, des notes de cacao et une finale profonde. À déguster jusqu’à la dernière goutte.\n\nNOTES DE DÉGUSTATION\n\nCacao, prune, épices douces.\n\nTORRÉFACTION\nSoutenu\nINTENSITÉ",
+      "outline": "solid",
+      "outlineWidth": "2px"
+    },
+    "home": {
+      "active": "profile-tab-matin",
+      "selected": "true"
+    },
+    "end": {
+      "active": "profile-tab-soir",
+      "selected": "true"
+    },
+    "panelFocus": {
+      "active": "coffee-profile-panel",
+      "role": "tabpanel",
+      "outline": "solid",
+      "outlineWidth": "2px"
+    },
+    "links": [
+      {
+        "text": "Aller à la présentation",
+        "href": "#story",
+        "valid": true
+      },
+      {
+        "text": "ATELIERCOFFEE",
+        "href": "#process",
+        "valid": true
+      },
+      {
+        "text": "PROCESS",
+        "href": "#process",
+        "valid": true
+      },
+      {
+        "text": "OUR COFFEE",
+        "href": "#cafes",
+        "valid": true
+      },
+      {
+        "text": "STORY",
+        "href": "#story",
+        "valid": true
+      },
+      {
+        "text": "DISCOVER",
+        "href": "#cafes",
+        "valid": true
+      },
+      {
+        "text": "DISCOVER OUR COFFEE",
+        "href": "#cafes",
+        "valid": true
+      },
+      {
+        "text": "DISCOVER OUR COFFEE",
+        "href": "#cafes",
+        "valid": true
+      },
+      {
+        "text": "DISCOVER OUR COFFEE",
+        "href": "#cafes",
+        "valid": true
+      },
+      {
+        "text": "DISCOVER OUR COFFEE",
+        "href": "#cafes",
+        "valid": true
+      },
+      {
+        "text": "DÉCOUVRIR NOTRE UNIVERS",
+        "href": "#story",
+        "valid": true
+      },
+      {
+        "text": "DÉCOUVRIR NOS CAFÉS",
+        "href": "#cafes",
+        "valid": true
+      },
+      {
+        "text": "REVIVRE LE RITUEL",
+        "href": "#process",
+        "valid": true
+      },
+      {
+        "text": "ATELIERCOFFEE",
+        "href": "#process",
+        "valid": true
+      },
+      {
+        "text": "BACK TO THE RITUAL",
+        "href": "#process",
+        "valid": true
+      }
+    ],
+    "images": [
+      {
+        "src": "/images/atelier-detail.webp",
+        "width": 1280,
+        "complete": true
+      },
+      {
+        "src": "/images/roast-detail.webp",
+        "width": 1280,
+        "complete": true
+      }
+    ],
+    "dimensions": {
+      "viewport": 1440,
+      "scrollWidth": 1440
+    },
+    "backTop": {
+      "y": 1,
+      "hash": "#process"
+    },
+    "errors": [],
+    "badAssets": []
+  }
+]

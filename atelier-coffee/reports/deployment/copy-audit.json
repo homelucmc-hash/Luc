@@ -1,0 +1,30 @@
+{
+  "src": {
+    "originalCount": 6,
+    "copiedCount": 6,
+    "missing": [],
+    "added": [],
+    "changed": []
+  },
+  "public": {
+    "originalCount": 327,
+    "copiedCount": 327,
+    "missing": [],
+    "added": [],
+    "changed": []
+  },
+  "gitCandidateCount": 446,
+  "badGitCandidates": [],
+  "webpFrames": 320,
+  "conventionalCredentialPatternFiles": [],
+  "configReview": {
+    "vercelFramework": "nextjs",
+    "customOutputDirectory": false,
+    "rootDirectoryMustBe": "atelier-coffee",
+    "build": "npm run build",
+    "nodeEngine": "22.x",
+    "postbuildAssetShaCheck": true,
+    "vercelIgnoreDoesNotExcludePublic": true,
+    "globalRewrite": false
+  }
+}

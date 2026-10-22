@@ -1,0 +1,12 @@
+{
+  "frames": 160,
+  "format": "webp",
+  "desktopWidth": 1280,
+  "mobileWidth": 800,
+  "denoiser": "Intel Open Image Denoise 2.3.3, RT LDR sRGB",
+  "encoding": "FFmpeg libwebp, quality86 desktop /82 mobile",
+  "sizes": {
+    "desktop": 5464902,
+    "mobile": 2749688
+  }
+}

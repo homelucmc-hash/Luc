@@ -1,0 +1,5 @@
+ATELIER COFFEE — Original Blender production
+
+All cup, handle, brew-group, portafilter, filter perforations, drip tray, liquid, droplets and crema geometry are original procedural models authored in scripts/render-coffee.py. All shader materials, surface motion, studio lighting, camera framing and animations are authored for this project. No reference image pixels, stock video or third-party models are rendered. The original AI-assisted generated crema-original.png microtexture is used as a Blender surface material; see production/textures for provenance. The five supplied reference stills are kept separate and used only for direction and validation.
+
+The final 160-frame sequence is rendered with Blender 4.3.2, Cycles CPU, 10 samples, then denoised with Intel Open Image Denoise 2.3.3 (RT LDR sRGB) and encoded by FFmpeg as WebP. Earlier Eevee and other review renders are excluded from delivery assets. Render parameters are recorded in frame-metadata.json, render-batches.json and encoding.json.

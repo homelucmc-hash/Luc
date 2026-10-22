@@ -1,0 +1,13 @@
+{
+  "file": "reports/validation/scroll-forward-reverse.mp4",
+  "bytes": 5200546,
+  "sha256": "4ac8663da04819db3dfcf34ac585021699e1c78e8c85ccfafd6970b7e77b8cb7",
+  "durationSeconds": 22.08,
+  "width": 1440,
+  "height": 900,
+  "fps": 25,
+  "source": "scroll-forward-reverse.webm",
+  "transformation": "FFmpeg H.264 MP4 conversion only; no retiming, crop or replacement of frames",
+  "visualReview": "REVUE-VISUELLE.md",
+  "premiumPhotorealismValidated": false
+}

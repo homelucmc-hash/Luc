@@ -1,0 +1,68 @@
+{
+  "checkedAtUtc": "2026-10-22T19:38:16.388283+00:00",
+  "status": "local_preview_running_external_url_blocked",
+  "localAddress": "http://127.0.0.1:3000",
+  "bind": "0.0.0.0:3000",
+  "localChecks": [
+    {
+      "path": "/",
+      "status": 200,
+      "bytes": 15772,
+      "mime": "text/html; charset=utf-8"
+    },
+    {
+      "path": "/espresso-frames/frame-0001.webp",
+      "status": 200,
+      "bytes": 23372,
+      "mime": "image/webp"
+    },
+    {
+      "path": "/espresso-frames/frame-0081.webp",
+      "status": 200,
+      "bytes": 40854,
+      "mime": "image/webp"
+    },
+    {
+      "path": "/espresso-frames/frame-0160.webp",
+      "status": 200,
+      "bytes": 39572,
+      "mime": "image/webp"
+    }
+  ],
+  "externalChecks": [
+    {
+      "service": "Cloudflare Quick Tunnel",
+      "endpoint": "https://api.trycloudflare.com/tunnel",
+      "result": "DNS direct refused; proxy CONNECT 403"
+    },
+    {
+      "service": "Localtunnel",
+      "endpoint": "https://localtunnel.me",
+      "result": "proxy CONNECT 403"
+    },
+    {
+      "service": "localhost.run",
+      "endpoint": "https://localhost.run",
+      "result": "proxy CONNECT 403"
+    }
+  ],
+  "publicUrl": null,
+  "sourcePublished": false,
+  "sitePublished": false,
+  "note": "No native port forwarding tool or public preview URL was exposed in this session. Localhost is not a browser URL on the user device. Existing static archive is a launchable fallback, not a verified remote interactive preview.",
+  "offlineBrowserAttempt": {
+    "status": "blocked_by_browser_policy",
+    "error": "ERR_BLOCKED_BY_ADMINISTRATOR",
+    "urlScheme": "file",
+    "projectModified": false,
+    "policyBypassAttempted": false,
+    "verifiedDoubleClickExport": false
+  },
+  "fallback": {
+    "archive": "/workspace/ATELIER-COFFEE-GSAP-site.zip",
+    "verifiedMode": "HTTP static server",
+    "command": "node scripts/serve.mjs",
+    "browserUrlOnUserMachine": "http://localhost:3000",
+    "note": "This localhost URL is available on the machine running the server. The cloud port is not an externally verified URL."
+  }
+}

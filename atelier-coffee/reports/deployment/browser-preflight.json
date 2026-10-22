@@ -1,0 +1,85 @@
+{
+  "status": "passed",
+  "scope": "Built export from clean Node22 install; not a hosted Vercel validation",
+  "errors": [],
+  "badResponses": [],
+  "desktop": {
+    "0": {
+      "frame": 0,
+      "variant": "desktop",
+      "decoded": 2,
+      "pinCount": 1,
+      "imageHash": "3e2749bc2a10f186d6597a881a03aec83c3fea49e9c3d8545ad7689c00299135"
+    },
+    "1": {
+      "frame": 159,
+      "variant": "desktop",
+      "decoded": 29,
+      "pinCount": 1,
+      "imageHash": "c116b900ad99b337444efef9ef629827846e1c2584b78b14828110f6927327e6"
+    },
+    "0.25": {
+      "frame": 40,
+      "variant": "desktop",
+      "decoded": 10,
+      "pinCount": 1,
+      "imageHash": "07bea1b37bd1fde1098cf3c5faf68a875e2684b9f978474d0ef39903ec25e45b"
+    },
+    "0.5": {
+      "frame": 80,
+      "variant": "desktop",
+      "decoded": 14,
+      "pinCount": 1,
+      "imageHash": "45a244a41f307922cfd09ea920341b5b51ba22ea313f4d9aafd836eb71ba1f90"
+    },
+    "0.75": {
+      "frame": 119,
+      "variant": "desktop",
+      "decoded": 24,
+      "pinCount": 1,
+      "imageHash": "e1c3d386f444e77083258141cb0b3e785fb82d2aea3debfdf390dd4e70309f06"
+    }
+  },
+  "mobile": {
+    "0": {
+      "frame": 0,
+      "variant": "mobile",
+      "decoded": 4,
+      "pinCount": 1,
+      "imageHash": "3df8b515bb76dc2e5e0cc41035aac53591da312c3793d6a2a627ce4cb23eb422"
+    },
+    "1": {
+      "frame": 159,
+      "variant": "mobile",
+      "decoded": 24,
+      "pinCount": 1,
+      "imageHash": "59a2ac472ad4b78db877f5389b2d1b992e2ab225c5a22b0efeafbbc249a7b5ea"
+    },
+    "0.25": {
+      "frame": 40,
+      "variant": "mobile",
+      "decoded": 5,
+      "pinCount": 1,
+      "imageHash": "ff1c1f3ae9f1492ab11702dffd19c3de0e0067aeaefaba2c3011e77b6f579e0a"
+    },
+    "0.5": {
+      "frame": 80,
+      "variant": "mobile",
+      "decoded": 13,
+      "pinCount": 1,
+      "imageHash": "737afa70309e8d6b65429970d8c9b32754231605d296ea1fb1bbf98bd5f593a4"
+    },
+    "0.75": {
+      "frame": 119,
+      "variant": "mobile",
+      "decoded": 20,
+      "pinCount": 1,
+      "imageHash": "a13b3aa2f806a391a4f7a84cd9e7e75b17a7b4d57d33823d8b7b340440eec8d9"
+    }
+  },
+  "publicUrl": null,
+  "visualParityWithOriginal": true,
+  "reverse": true,
+  "pauseStable": true,
+  "finishedAt": "2026-10-22T20:02:36.217Z"
+}

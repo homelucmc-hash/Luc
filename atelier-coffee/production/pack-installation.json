@@ -1,0 +1,84 @@
+{
+  "archive": "atelier_coffee_PACK_CODEX_3D_SCROLL.zip",
+  "archiveSha256": "1c363c063014b9d6a4be1e5c459a49f499e4c73df18d3c1b043a044c5bf89d81",
+  "backup": "/workspace/ATELIER-COFFEE-avant-pack-2026-10-22.zip",
+  "files": [
+    {
+      "path": "tools/verify_sequence.py",
+      "sourceSha256": "056386b3088019ccb141b5a6c3f1662d32d2c485f1cb5860f5dc9c38b1d7611c"
+    },
+    {
+      "path": "tools/prepare_sequence.py",
+      "sourceSha256": "13faf2045bc2d711869eb0b45b525200d4b1b04c857613b822d89f1377928844"
+    },
+    {
+      "path": "AGENTS.md",
+      "sourceSha256": "1d7c50b94c3180d074f136c5ae018f9acf1766de12bfe936bb5bb9b11f52374a"
+    },
+    {
+      "path": "LIS-MOI-EN-PREMIER.md",
+      "sourceSha256": "dd7781cf1848120766cf439ced847e1a8a124eff3e2bef504051b5d6ce60eaca"
+    },
+    {
+      "path": "assets/README.md",
+      "sourceSha256": "658944b23c8e846a67f60600c9f6628458b6cb9457ac983c49318f084f23587c"
+    },
+    {
+      "path": "public/espresso-frames/README.md",
+      "sourceSha256": "93ede26b4091e14fe91e92a2388a7d173cd3fdcc7a8c212e1161f43b816561a7"
+    },
+    {
+      "path": "reference-code/CoffeeScrollSequence.tsx",
+      "sourceSha256": "a68acc751a81c60acc7b182301c1ef4da705ca5a5afcdef8efa8d876fe9ac2dd"
+    },
+    {
+      "path": "reference-code/CoffeeScrollSequence.module.css",
+      "sourceSha256": "842fd3966b7b392240528d3d8777194740d2ba4e66ed9ed65d5e2d4bbb78a1da"
+    },
+    {
+      "path": "reference-code/tests/coffee-scroll.spec.ts",
+      "sourceSha256": "b0f4e107785559272d2e8af2ed9a8d7d72384665d8fc957a1afead77cf0285a0"
+    },
+    {
+      "path": ".agents/skills/atelier-scroll/SKILL.md",
+      "sourceSha256": "0e81bcb7f604863240e077690f52f8502a5bf0826dc746a745f59fd0e4edb0af"
+    },
+    {
+      "path": "references/02_ASSETS_ET_VIDEO.md",
+      "sourceSha256": "834e8a2a609039c94bf5aafc0b86a6f07d6dea92be4eb82a06c53f3431ddd641"
+    },
+    {
+      "path": "references/01_BRIEF_VISUEL.md",
+      "sourceSha256": "560dd97a83542a1852a775078713c134ce692700f66bdf94069b90422b8667d5"
+    },
+    {
+      "path": "references/visuels/LISEZ-MOI-CODEX.txt",
+      "sourceSha256": "4c8ae252b774ec35b33c11b235df87d846b389ca7ca6a834a76157db92afa877"
+    },
+    {
+      "path": "references/visuels/02-extraction.webp",
+      "sourceSha256": "f9a586120cec66a2ad49b289d3b63c640f5a76e67f45b3ba6ecdb1fdc87d36b5"
+    },
+    {
+      "path": "references/visuels/05-revelation-finale.webp",
+      "sourceSha256": "7aa2076d8d6ec9b95d4562997f6798c6c49f9f6b3b2951b6d30a363a4b777a82"
+    },
+    {
+      "path": "references/visuels/04-tasse-presque-pleine.webp",
+      "sourceSha256": "d1c7611431e52eab35a243200158efe1b2b5978d51c16a27c03d8b7d35d9ff86"
+    },
+    {
+      "path": "references/visuels/03-versement.webp",
+      "sourceSha256": "f17e96aa48bd63481c500fee783a5ea9b7da1943b768c6fb37ad5c54d25a8c58"
+    },
+    {
+      "path": "references/visuels/01-premiere-goutte.webp",
+      "sourceSha256": "17c4c95cddcfe427ae7224254ed346afe45ff6c74ef15a403c876e567b0389cd"
+    },
+    {
+      "path": "references/03_TESTS_OBLIGATOIRES.md",
+      "sourceSha256": "a4281af3bf15e6c269192e7ca133c7b812ba0a8f7e9594b8542bdf6be1a7fbc2"
+    }
+  ],
+  "scope": "Pack installation only; reference-code is not mounted in the application; no production video/frames included."
+}

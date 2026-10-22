@@ -1,0 +1,1 @@
+Stockage LOCAL de la vidéo d'origine espresso-source.mp4. Aucune vidéo fournie dans ce pack : choisir/télécharger légalement une vidéo source réelle puis préparer les frames via tools/prepare_sequence.py.

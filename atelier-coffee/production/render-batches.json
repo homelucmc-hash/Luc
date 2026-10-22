@@ -1,0 +1,26 @@
+{
+  "batches": [
+    {
+      "start": 0,
+      "endInclusive": 44,
+      "threads": 4,
+      "cremaExposure": 0
+    },
+    {
+      "start": 45,
+      "endInclusive": 79,
+      "threads": 4,
+      "cremaExposure": -1.5
+    },
+    {
+      "start": 80,
+      "endInclusive": 159,
+      "threads": 5,
+      "nice": 10,
+      "cremaExposure": -1.5
+    }
+  ],
+  "samples": 10,
+  "width": 1280,
+  "height": 720
+}

@@ -1,0 +1,37 @@
+{
+  "name": "atelier-coffee-experience",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev --hostname 0.0.0.0",
+    "build": "next build",
+    "start": "node scripts/serve.mjs",
+    "typecheck": "next typegen && tsc --noEmit",
+    "verify:sequence": "python tools/verify_sequence.py",
+    "prebuild": "node scripts/check-assets.mjs",
+    "check:assets": "node scripts/check-assets.mjs",
+    "postbuild": "node scripts/check-export.mjs",
+    "check:export": "node scripts/check-export.mjs"
+  },
+  "dependencies": {
+    "@fontsource/bodoni-moda": "^5.2.0",
+    "@fontsource/dm-sans": "^5.2.0",
+    "@gsap/react": "^2.1.2",
+    "gsap": "^3.13.0",
+    "next": "^16.0.0",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4.1.0",
+    "@types/node": "^24.0.0",
+    "@types/react": "^19.2.0",
+    "@types/react-dom": "^19.2.0",
+    "postcss": "^8.5.0",
+    "tailwindcss": "^4.1.0",
+    "typescript": "^5.9.0"
+  },
+  "engines": {
+    "node": "22.x"
+  }
+}

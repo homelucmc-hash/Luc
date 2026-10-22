@@ -1,0 +1,22 @@
+ATELIER COFFEE — CRÉDITS DES PHOTOGRAPHIES D’ACCOMPAGNEMENT
+Création : 21 octobre 2026.
+
+Ces deux photographies originales sont générées pour ce projet avec l’outil image_gen d’OpenAI, sur descriptions rédigées à partir de la direction artistique du brief. Ce ne sont pas des prises de vue documentaires. Aucune photo ni élément de marque d’un site concurrent n’a été utilisé ou récupéré. Aucun logo ni texte n’est incorporé aux images.
+
+Ce sont des visuels fixes d’accompagnement, distincts des références et de la séquence principale d’extraction. Ils ne servent pas à prétendre qu’un mouvement du liquide a été produit.
+
+roast-detail.webp
+Sujet : Macro éditoriale de grains arabica torréfiés, fond noir pierre, lumière rasante cuivre/ambre.
+Original généré conservé : /workspace/generated_images/exec-263f1617-9cf4-44d2-a43c-fbe7e3eb9a7f.png
+Livraison : public/images/roast-detail.webp
+Format : WebP 1280 × 854, qualité FFmpeg 82, compression_level 6.
+SHA-256 original : 08a26d1f772bbc39daf9d298edf85fe2e39c7ac7ddbd3b25ded231a5facd37a5
+SHA-256 livraison : 571adec37119c39c7124fd5132904352996ed9876a3632268fda0feeb1680446
+
+atelier-detail.webp
+Sujet : Détail de main de barista pressant un tamper acier dans un porte-filtre, atelier sombre et reflets ambrés.
+Original généré conservé : /workspace/generated_images/exec-303ad223-dcfd-42a3-8506-e794d5bd3548.png
+Livraison : public/images/atelier-detail.webp
+Format : WebP 1280 × 854, qualité FFmpeg 82, compression_level 6.
+SHA-256 original : 1ac48e34fc87dc62ede9441062a8c9a50a8cb0170ed5e31c691f8053c73f9a33
+SHA-256 livraison : 7c94226026fe1cf552f5fdcdddcf66037795450433905d6e0f295f5e3d0aba9b
