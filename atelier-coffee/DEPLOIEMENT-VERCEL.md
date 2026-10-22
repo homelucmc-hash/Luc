@@ -52,7 +52,7 @@ Dans la page Vercel, copier le domaine réellement attribué depuis **Domains**.
 2. Défiler lentement : la première goutte devient un flux ; le niveau est bas vers 50 %, proche du plein vers 75 %, puis le flux s’arrête.
 3. S’arrêter : l’image ne doit pas avancer seule.
 4. Remonter : le niveau doit redescendre et les mêmes étapes doivent revenir.
-5. Tester les cinq boutons de chapitre et le bouton de réduction des mouvements.
+5. Tester **Réduire les mouvements** : image finale fixe et bouton contrasté **Activer l’expérience**. Activer explicitement doit ramener au début et rétablir le scroll. Si le système demande déjà une réduction, ce mode fixe est le comportement initial attendu.
 6. Tester une fenêtre étroite ou un téléphone : la variante mobile conserve le contrôle par scroll.
 
 Pour contrôler les images, ajouter ces chemins au vrai domaine Vercel :
@@ -77,6 +77,12 @@ Le lecteur reste dans le navigateur : `useGSAP`, ScrollTrigger `pin` + `scrub`, 
 Cette préparation et un build réussi ne prouvent pas qu’un site est déjà publié. Tant que Vercel n’a pas attribué un domaine accessible et que ce domaine n’a pas été contrôlé, la validation distante du scroll et des images reste **à effectuer**.
 
 L’environnement Codex actuel bloque `vercel.com`, `api.vercel.com` et les domaines `vercel.app` testés. Aucun identifiant Vercel n’y est configuré. Cela n’empêche pas l’import et le déploiement depuis votre navigateur, mais empêche l’agent d’annoncer un déploiement distant vérifié depuis cette session.
+
+Le lien fourni lors de la correction est `https://cafe-qs2yhnbvb-d7-13b5.vercel.app/#story`. Les nouveaux accès HTTP et Chromium du 22 octobre 2026 échouent dans le tunnel du proxy Codex, avant toute réponse du site. Ce refus ne prouve pas une panne Vercel. Voir `reports/correction/published-site.json`.
+
+Pour contrôler une nouvelle correction après fusion sur `main`, ouvrir votre projet Vercel → **Deployments**, sélectionner le déploiement **Ready** dont le commit correspond à la correction, puis **Visit**. Utiliser son domaine de production ou le nouveau lien indiqué : une ancienne URL de déploiement peut continuer à afficher l’ancienne version. Retirer `#story` ou cliquer le nom **ATELIER COFFEE** pour revenir au début du film.
+
+La validation du moteur sur le build de production est séparée de la qualité de la source : tant que `assets/espresso-live-action.mp4` manque, le site conserve le rendu Blender provisoire. La correction de l’interface ne le transforme pas en prise de vue réelle.
 
 Le photoréalisme de la source reste perfectible ; l’hébergement HTTPS conserve les images actuelles et leur comportement, sans modifier leur qualité visuelle.
 

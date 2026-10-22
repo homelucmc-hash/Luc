@@ -1,0 +1,16 @@
+{
+  "url": "https://cafe-qs2yhnbvb-d7-13b5.vercel.app/#story",
+  "checkedAt": "2026-10-22T21:44:16.871Z",
+  "method": "Normal Playwright Chromium HTTPS navigation; no proxy bypass",
+  "siteLoaded": false,
+  "responses": [],
+  "requestFailures": [
+    {
+      "url": "https://cafe-qs2yhnbvb-d7-13b5.vercel.app/",
+      "failure": "net::ERR_TUNNEL_CONNECTION_FAILED"
+    }
+  ],
+  "consoleErrors": [],
+  "limitation": "The cloud browser could not load the published site. This does not establish a Vercel application error; the environment network proxy may refuse the HTTPS tunnel. No visual validation of the published site was possible.",
+  "navigationError": "Error: page.goto: net::ERR_TUNNEL_CONNECTION_FAILED at https://cafe-qs2yhnbvb-d7-13b5.vercel.app/#story\nCall log:\n\u001b[2m  - navigating to \"https://cafe-qs2yhnbvb-d7-13b5.vercel.app/#story\", waiting until \"domcontentloaded\"\u001b[22m\n"
+}

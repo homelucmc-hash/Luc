@@ -1,0 +1,91 @@
+{
+  "workspace": "/tmp/atelier-coffee-import-56doczb1",
+  "source": "existing CGI: technical test only",
+  "tests": [
+    {
+      "name": "missing input mutates nothing",
+      "passed": true,
+      "exitCode": 1,
+      "seconds": 0.07,
+      "stdout": "",
+      "stderr": "ÉCHEC — destination conservée : vidéo absente : /tmp/atelier-coffee-import-56doczb1/absent.mp4\n"
+    },
+    {
+      "name": "clip longer than video refused",
+      "passed": true,
+      "exitCode": 1,
+      "seconds": 0.23,
+      "stdout": "",
+      "stderr": "ÉCHEC — destination conservée : extrait insuffisant : fin demandée 9s, vidéo 8s\n"
+    },
+    {
+      "name": "known upsampling refused",
+      "passed": true,
+      "exitCode": 1,
+      "seconds": 0.21,
+      "stdout": "",
+      "stderr": "ÉCHEC — destination conservée : 160 frames en 6s exigent 26.6667 i/s, au-dessus des 20 i/s annoncées par la source ; allonger l'extrait ou réduire --frames\n"
+    },
+    {
+      "name": "minimum app count enforced",
+      "passed": true,
+      "exitCode": 2,
+      "seconds": 0.08,
+      "stdout": "",
+      "stderr": "usage: prepare_sequence.py [-h] --input INPUT [--start START]\n                           [--duration DURATION] [--frames FRAMES] [--fps FPS]\n                           [--width {1280}] [--quality QUALITY]\n                           [--mobile-quality MOBILE_QUALITY] [--output OUTPUT]\n                           [--source-kind {unknown,live-action,cgi}]\n                           [--source SOURCE] [--provenance PROVENANCE]\n                           [--license LICENSE_INFO]\nprepare_sequence.py: error: le site et ses checks exigent 120 à 9999 frames par variante\n"
+    },
+    {
+      "name": "160 desktop + 160 mobile default complete import CGI only",
+      "passed": true,
+      "exitCode": 0,
+      "seconds": 14.02,
+      "stdout": "Préparation : 160 frames × 2 résolutions, 20 i/s ; destination inchangée pendant validation.\nOK structure : 320 frames + 2 posters, 4.15 Mio ; /tmp/atelier-coffee-import-56doczb1/complete\nNon réalisé par cet outil : revue des droits, photoréalisme, niveau qui monte et tests de scroll aller/retour.\n",
+      "stderr": ""
+    },
+    {
+      "name": "failed encoder keeps complete previous destination",
+      "passed": true,
+      "exitCode": 1,
+      "seconds": 0.21,
+      "stdout": "Préparation : 160 frames × 2 résolutions, 20 i/s ; destination inchangée pendant validation.\n",
+      "stderr": "ÉCHEC — destination conservée : ffmpeg a échoué : \n"
+    },
+    {
+      "name": "unchanged app check-assets script accepts generated fixture",
+      "passed": true,
+      "exitCode": 0,
+      "stdout": "Assets vérifiés : 160 photogrammes dans chaque résolution et deux posters. La validation visuelle reste distincte.\n"
+    },
+    {
+      "name": "install rename failure restores original directory",
+      "passed": true
+    },
+    {
+      "name": "default160 frames and unknown provenance",
+      "passed": true
+    }
+  ],
+  "defaultOutputContractVerified": {
+    "desktop": 160,
+    "mobile": 160,
+    "posters": 2,
+    "manifest": {
+      "count": 160,
+      "ext": "webp",
+      "width": 1280,
+      "height": 720,
+      "mobileWidth": 800,
+      "mobileHeight": 450,
+      "source": "Rendu de synthèse déclaré : espresso-source.mp4",
+      "sourceKind": "cgi",
+      "sourceFile": "espresso-source.mp4",
+      "sourceSha256": "041bc68e864bcff124ef8fb5a504e7aafbbe3b9bbeadf3494e9a03dc3f26ba1e",
+      "start": 0,
+      "duration": 8,
+      "fps": 20.0,
+      "visualValidation": "not-performed-by-importer"
+    }
+  },
+  "publicAnimationUnchanged": true,
+  "allPassed": true
+}
