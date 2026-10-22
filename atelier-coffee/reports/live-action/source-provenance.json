@@ -1,0 +1,64 @@
+{
+  "recordedOn": "2026-10-23",
+  "sourceKind": "live-action",
+  "sourcePath": "assets/espresso-live-action.mp4",
+  "originalFilename": "15157920_3840_2160_24fps (1).mp4",
+  "originalRepositoryPath": "atelier-coffee/assets/15157920_3840_2160_24fps (1).mp4",
+  "sha256": "086af25554b55c493b097e3daebcadf3319fbbe682ff4b2839cde0ee4407d6f6",
+  "renamedWithoutChangingContent": true,
+  "delivery": {
+    "providedBy": "user",
+    "method": "GitHub file upload",
+    "repository": "homelucmc-hash/Luc",
+    "branchAtUpload": "main",
+    "commit": "10c051da0f62ee06641ec502a400f906a9431af2",
+    "commitUrl": "https://github.com/homelucmc-hash/Luc/commit/10c051da0f62ee06641ec502a400f906a9431af2"
+  },
+  "metadata": {
+    "verifiedWith": "ffprobe",
+    "codec": "h264",
+    "width": 3840,
+    "height": 2160,
+    "frameRate": "24/1",
+    "frames": 542,
+    "durationSeconds": 22.583333,
+    "sizeBytes": 21782560
+  },
+  "rights": {
+    "author": null,
+    "license": null,
+    "status": "not_provided",
+    "note": "Source fournie par l’utilisateur pour l’intégration demandée. Auteur et licence non renseignés ; aucune attribution ni licence supposée à partir du nom du fichier ou du compte GitHub."
+  },
+  "sourceReview": {
+    "reviewReportedBy": "project lead and film-direction review agent",
+    "observations": [
+      "real continuous espresso shot",
+      "coffee streams visible",
+      "liquid level visibly rises in the cup",
+      "streams stop near the end of the shot"
+    ],
+    "browserValidation": "recorded separately in browser test reports"
+  },
+  "import": {
+    "tool": "tools/prepare_sequence.py",
+    "startSeconds": 0,
+    "durationSeconds": 22.5,
+    "endSeconds": 22.5,
+    "sampledFrameRate": "64/9",
+    "framesPerVariant": 160,
+    "desktopDimensions": [1280, 720],
+    "mobileDimensions": [800, 450],
+    "output": "public/espresso-frames",
+    "reviewOutput": "production/live-action-review/espresso-frames",
+    "sequenceWebp": 320,
+    "posters": 2,
+    "totalWebpBytes": 27851508,
+    "sourceHashMatchesPublicManifest": true
+  },
+  "retainedArchive": {
+    "path": "assets/espresso-source.mp4",
+    "sourceKind": "cgi",
+    "description": "Previous Blender render, retained as archive and not the source of the imported live-action sequence."
+  }
+}

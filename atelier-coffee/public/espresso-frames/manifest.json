@@ -4,5 +4,14 @@
   "width": 1280,
   "height": 720,
   "mobileWidth": 800,
-  "source": "Original continuous Blender Cycles espresso render"
+  "mobileHeight": 450,
+  "source": "Plan réel fourni par l’utilisateur : extraction d’un espresso, tasse vide puis montée du niveau et fin des jets.",
+  "sourceKind": "live-action",
+  "sourceFile": "espresso-live-action.mp4",
+  "sourceSha256": "086af25554b55c493b097e3daebcadf3319fbbe682ff4b2839cde0ee4407d6f6",
+  "start": 0.0,
+  "duration": 22.5,
+  "fps": 7.111111111111111,
+  "visualValidation": "not-performed-by-importer",
+  "provenance": "GitHub homelucmc-hash/Luc, main commit 10c051da0f62ee06641ec502a400f906a9431af2, fichier original 15157920_3840_2160_24fps (1).mp4 ; auteur et licence non renseignés."
 }

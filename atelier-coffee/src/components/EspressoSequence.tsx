@@ -7,7 +7,7 @@ export const FRAME_COUNT = sequence.count;
 type Drawable = ImageBitmap | HTMLImageElement;
 type Task = { index: number; resolve: (blob: Blob) => void; reject: (error: Error) => void };
 
-/** No clock drives this player: one scroll value selects one original rendered frame. */
+/** No clock drives this player: one scroll value selects one source video frame. */
 export default function EspressoSequence({ progress, onReady, reduced }: {
   progress: RefObject<{ value: number }>;
   onReady: (draw: () => void) => void;
@@ -155,8 +155,9 @@ export default function EspressoSequence({ progress, onReady, reduced }: {
       const scale = Math.max(pixelWidth / image.width, pixelHeight / image.height);
       const drawWidth = image.width * scale;
       const drawHeight = image.height * scale;
-      // On portrait screens, retain the extraction axis rather than the empty left margin.
-      const focus = window.innerWidth <= 760 ? .68 : .5;
+      // The real clip's cup and both spouts are centred at about 52% of its width.
+      // Keep that axis in portrait instead of the old CGI's right-hand framing.
+      const focus = window.innerWidth <= 760 ? .52 : .5;
       const x = (pixelWidth - drawWidth) * focus;
       const y = (pixelHeight - drawHeight) * .5;
       context!.drawImage(image, x, y, drawWidth, drawHeight);
@@ -239,7 +240,7 @@ export default function EspressoSequence({ progress, onReady, reduced }: {
     {/* The initial frame is server-rendered; it never waits for WebGL or a scene chunk. */}
     {/* eslint-disable-next-line @next/next/no-img-element */}
     <img className="sequence-poster" src={reduced ? '/espresso-frames/final.webp' : '/espresso-frames/poster.webp'}
-      alt="Extraction d’un espresso sous un porte-filtre, éclairage ambré sur fond noir."
+      alt="Machine à espresso et tasse blanche : un plan réel de l’extraction du café."
       width={sequence.width} height={sequence.height} fetchPriority="high" decoding="async" />
     <canvas ref={canvasRef} data-frame-count={FRAME_COUNT} data-frame="-1" role="img"
       aria-label="Extraction d’un espresso : le défilement contrôle le flux et le remplissage de la tasse." />

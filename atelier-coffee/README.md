@@ -1,8 +1,8 @@
 # ATELIER COFFEE — Le temps d’un espresso
 
-Expérience éditoriale sombre autour de l’extraction d’un espresso. Le défilement contrôle une séquence originale de 160 rendus 3D : le flux apparaît, la tasse se révèle, le café monte puis le versement s’arrête. Remonter parcourt exactement les mêmes images en sens inverse.
+Le défilement contrôle 160 photogrammes issus d’une vraie prise de vue d’extraction d’espresso. La tasse commence vide, les deux jets apparaissent, le niveau et la crema montent, puis les jets s’arrêtent. Remonter parcourt les mêmes images en sens inverse. La tasse finale contient un espresso ; elle n’est pas remplie jusqu’au bord.
 
-**Le remplacement par une prise de vue réelle n’est pas réalisé.** Les candidats du pack sont bloqués par le proxy de Codex. La séquence Blender reste provisoire et n’est pas présentée comme photoréaliste. Le fichier attendu est `assets/espresso-live-action.mp4` ; voir [les critères de la source](reports/correction/real-source-access.md). Les preuves de la correction actuelle sont regroupées dans [le rapport de correction](reports/correction/README.md) ; les anciens rapports décrivent la version précédente.
+La source fournie sur GitHub sous le nom `15157920_3840_2160_24fps (1).mp4` est conservée sans réencodage sous `assets/espresso-live-action.mp4` : 4K, 24 images/s, 22,58 secondes. L’extrait utilisé va de 0 à 22,5 secondes. Le rendu CGI public a été remplacé après revue du flux et du niveau ; son ancien MP4 et sa scène Blender restent archivés. Voir [la validation de cette intégration](reports/live-action/README.md). Les rapports `correction/` et `validation/` décrivent les versions CGI précédentes.
 
 Pour publier uniquement depuis Chrome, suivre [le guide GitHub → Vercel](DEPLOIEMENT-VERCEL.md). Dans le dépôt `homelucmc-hash/Luc`, choisir **Root Directory : `atelier-coffee`** lors de l’import Vercel. Aucun terminal sur votre ordinateur n’est nécessaire.
 
@@ -31,11 +31,11 @@ Une timeline GSAP unique utilise ScrollTrigger avec `pin` et `scrub: true`. Sa p
 
 | Progression | Composition |
 | --- | --- |
-| 0–20 % | Porte-filtre en macro et premières gouttes |
-| 20–40 % | Établissement du flux |
-| 40–65 % | Révélation de la tasse et montée du café |
-| 65–85 % | Crema et tasse proche du plein |
-| 85–100 % | Arrêt du flux et composition finale |
+| 0 % | Tasse vide, becs visibles |
+| 25 % | Deux jets, début de remplissage |
+| 50 % | Surface et crema visibles, niveau plus haut |
+| 75 % | Extraction continue, niveau qui progresse |
+| 100 % | Jets arrêtés, espresso avec crema dans la tasse |
 
 Le poster est présent dans le HTML initial. Le lecteur Canvas conserve sa dernière image valide pendant un chargement. Quatre requêtes au maximum chargent les WebP, avec priorité à l’image demandée. Les fichiers comprimés sont mis en cache progressivement ; les images décodées sont limitées à 32 sur ordinateur et 24 sur mobile. La variante mobile mesure 800 px de large, contre 1280 px sur ordinateur. Le dessin utilise un seul RAF à la demande, sans boucle permanente.
 
@@ -55,12 +55,11 @@ Les pratiques appliquées sont détaillées dans `AGENTS.md` : `useGSAP`, scope 
 - `src/components/EspressoSequence.tsx` : Canvas, chargement, cache et nettoyage.
 - `src/components/BrandSections.tsx` : courte présentation éditoriale.
 - `public/espresso-frames/` : série desktop, sous-dossier `mobile/`, posters et manifeste.
-- `production/atelier-espresso.blend` : scène source avec texture embarquée.
-- `assets/espresso-source.mp4` : export de contrôle de la séquence originale, 160 images à 20 fps, huit secondes.
-- `scripts/render-coffee.py` et `scripts/encode-sequence.py` : production des images.
-- `production/frame-metadata.json` : état du café, du flux et de la caméra par image.
-- `production/encoding.json` : résolutions et poids des assets.
-- [Rapport de correction](reports/correction/README.md) : preuves actuelles et points non réalisés.
+- `assets/espresso-live-action.mp4` : prise de vue 4K fournie par l’utilisateur, utilisée par le site.
+- `tools/prepare_sequence.py` : importeur WebP desktop/mobile avec staging et restauration en cas d’échec.
+- `production/atelier-espresso.blend`, `assets/espresso-source.mp4`, les scripts de rendu et anciens fichiers de production : archives CGI, non utilisés par l’animation actuelle.
+- [Rapport de prise de vue réelle](reports/live-action/README.md) : preuves actuelles et limites.
+- [Ancien rapport de correction](reports/correction/README.md) : interface et mode de mouvement, sur la version CGI précédente.
 - [Ancien rapport de validation](reports/validation/README.md) : version précédente, conservée pour comparaison.
 
 ## Vérifications
@@ -72,7 +71,7 @@ npm run typecheck
 npm run build
 ```
 
-Le build refuse une séquence manquante ou incomplète. La recette Chromium contrôle les cinq positions, le retour aux mêmes pixels, la pause sans dessin supplémentaire, les changements de largeur, le clavier, la réduction des mouvements et le chargement ralenti. Les résultats effectivement obtenus figurent dans le rapport de correction ; un build réussi ne prouve pas la qualité visuelle.
+Le build refuse une séquence manquante ou incomplète. La recette Chromium contrôle les cinq positions, le retour aux mêmes pixels échantillonnés, la pause sans dessin supplémentaire, les changements de largeur, le clavier, la réduction des mouvements et le chargement ralenti. Les résultats figurent dans le rapport `live-action/` ; un build réussi ne prouve pas la qualité visuelle.
 
 Le harness est reproductible avec une installation existante de Playwright et Chromium :
 
@@ -82,21 +81,20 @@ BASE_URL=http://localhost:3000 node scripts/check-correction-browser.cjs
 
 Les variables `PLAYWRIGHT_MODULE`, `CHROMIUM_EXECUTABLE` et `FFMPEG_EXECUTABLE` permettent d’utiliser des outils déjà installés. Ces outils de recette ne sont pas des dépendances du site.
 
-## Reproduire les images (facultatif)
+## Réimporter la prise de vue
 
-Blender 4.3.2, FFmpeg et le CLI Intel Open Image Denoise 2.3.3 sont nécessaires uniquement pour recréer les assets. Le débruiteur officiel est disponible sur https://github.com/RenderKit/oidn/releases (licence Apache-2.0).
+Ces commandes sont destinées à l’environnement de développement Codex. Aucun logiciel n’est nécessaire sur l’ordinateur de l’utilisateur du site. L’importeur existant nécessite FFmpeg et ffprobe ; il produit les 160 images desktop 1280×720, les 160 images mobile 800×450, les deux posters et le manifeste complet avant tout remplacement.
 
 ```sh
-blender --background --factory-startup --python scripts/render-coffee.py -- --frames all --width 1280 --samples 10 --threads 5 --crema-exposure -1.5 --output production/final-renders --save-blend
-python scripts/encode-sequence.py --input production/final-renders --oidn /chemin/vers/oidnDenoise
+python tools/prepare_sequence.py --input assets/espresso-live-action.mp4 --start 0 --duration 22.5 --frames 160 --source-kind live-action --output production/live-action-review/espresso-frames
 ```
 
-Le rendu CPU est long. L’encodeur accepte `--watch` pendant que Blender produit les PNG. Les rendus bruts, logs et essais rejetés ne sont pas nécessaires à l’exécution du site et ne font pas partie des assets livrés au navigateur. Voir `production/README.md` pour les détails reproductibles.
+Vérifier les cinq états et le cadrage, puis viser `--output public/espresso-frames` pour remplacer la séquence entière. Renseigner aussi la provenance réellement connue avec `--source` et `--provenance`. Voir [le guide de source et d’import](assets/README-LIVE-ACTION.md). Le MP4 n’est pas téléchargé par les visiteurs : le site utilise uniquement les WebP locaux.
 
 ## Origine et limites
 
-La scène, les modèles, matériaux, éclairages et mouvements ont été créés pour ce projet. La crema utilise une texture originale assistée par génération d’image. Les deux photos éditoriales sont également générées pour cette démonstration ; les provenances sont conservées dans `production/`.
+La vidéo a été fournie dans le dépôt par l’utilisateur ; son nom d’origine, son commit GitHub et son empreinte sont conservés dans `reports/live-action/source-provenance.json` et dans le manifeste. Aucun auteur ni licence externe n’a été inventé. La photo éditoriale qui suit le film reste une image générée de la démonstration précédente ; sa provenance est conservée dans `production/`.
 
-Les cinq références fournies restent séparées dans `references/` et servent de direction artistique. Elles ne sont pas utilisées comme photogrammes. La séquence est un rendu CGI continu, avec une surface liquide et un flux déterministes ; ce n’est pas une simulation hydrodynamique ni une scène 3D manipulable dans le navigateur. Le débruitage atténue certains détails fins de la crema. Le résultat n’est pas présenté comme une prise de vue réelle.
+Les cinq références fournies restent séparées dans `references/` et servent de direction artistique. Elles ne sont pas utilisées comme photogrammes. La vidéo montre un vrai café dans une lumière naturelle claire, avec un décor de machine visible. Elle n’a pas la lumière de studio noire des références initiales ; aucune synthèse de liquide ni interpolation générative n’a été ajoutée.
 
 ATELIER COFFEE est une marque fictive. Le site est une démonstration sans achat ni envoi de données.
