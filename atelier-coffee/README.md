@@ -1,12 +1,14 @@
-# ATELIER COFFEE — Precision in every drop
+# ATELIER COFFEE — Le temps d’un espresso
 
 Expérience éditoriale sombre autour de l’extraction d’un espresso. Le défilement contrôle une séquence originale de 160 rendus 3D : le flux apparaît, la tasse se révèle, le café monte puis le versement s’arrête. Remonter parcourt exactement les mêmes images en sens inverse.
+
+**Le remplacement par une prise de vue réelle n’est pas réalisé.** Les candidats du pack sont bloqués par le proxy de Codex. La séquence Blender reste provisoire et n’est pas présentée comme photoréaliste. Le fichier attendu est `assets/espresso-live-action.mp4` ; voir [les critères de la source](reports/correction/real-source-access.md). Les preuves de la correction actuelle sont regroupées dans [le rapport de correction](reports/correction/README.md) ; les anciens rapports décrivent la version précédente.
 
 Pour publier uniquement depuis Chrome, suivre [le guide GitHub → Vercel](DEPLOIEMENT-VERCEL.md). Dans le dépôt `homelucmc-hash/Luc`, choisir **Root Directory : `atelier-coffee`** lors de l’import Vercel. Aucun terminal sur votre ordinateur n’est nécessaire.
 
 ## Lancer le projet
 
-Node.js 20.9+ et npm sont nécessaires. Aucun logiciel 3D, compte externe ou clé API n’est requis pour afficher le site.
+Dans l’environnement de développement, utiliser Node.js 22 et npm. Aucun logiciel 3D, compte externe ou clé API n’est requis pour afficher le site. Pour l’utilisateur du site publié, Chrome et son URL HTTPS suffisent.
 
 ```sh
 npm ci
@@ -37,7 +39,9 @@ Une timeline GSAP unique utilise ScrollTrigger avec `pin` et `scrub: true`. Sa p
 
 Le poster est présent dans le HTML initial. Le lecteur Canvas conserve sa dernière image valide pendant un chargement. Quatre requêtes au maximum chargent les WebP, avec priorité à l’image demandée. Les fichiers comprimés sont mis en cache progressivement ; les images décodées sont limitées à 32 sur ordinateur et 24 sur mobile. La variante mobile mesure 800 px de large, contre 1280 px sur ordinateur. Le dessin utilise un seul RAF à la demande, sans boucle permanente.
 
-Le mode de réduction des mouvements charge uniquement l’image finale, sans longue scène épinglée. Le choix du système est respecté par défaut ; le bouton permet de le modifier. Les chapitres et les profils de dégustation sont utilisables au clavier.
+Sans demande de réduction des mouvements, la séquence animée est active dès l’ouverture : aucun bouton d’activation n’est nécessaire. Le mode de réduction des mouvements affiche uniquement l’image finale, sans scène épinglée. Un message explique ce choix et un bouton contrasté « Activer l’expérience » permet de l’activer explicitement, au clavier comme à la souris. Le choix explicite reste prioritaire lors des changements de largeur et de préférence système dans la page ; il n’est pas conservé après un rechargement.
+
+Le film occupe tout l’écran. Seuls le titre initial et la signature finale l’accompagnent ; aucun texte ne recouvre les étapes intermédiaires. La navigation et la présentation de l’atelier sont volontairement réduites.
 
 ## GSAP officiel
 
@@ -47,16 +51,17 @@ Les pratiques appliquées sont détaillées dans `AGENTS.md` : `useGSAP`, scope 
 
 ## Fichiers utiles
 
-- `src/components/CoffeeExperience.tsx` : timeline, pin, chapitres et préférence de mouvement.
+- `src/components/CoffeeExperience.tsx` : timeline, pin, légendes et préférence de mouvement.
 - `src/components/EspressoSequence.tsx` : Canvas, chargement, cache et nettoyage.
-- `src/components/BrandSections.tsx` : contenu éditorial et onglets de dégustation.
+- `src/components/BrandSections.tsx` : courte présentation éditoriale.
 - `public/espresso-frames/` : série desktop, sous-dossier `mobile/`, posters et manifeste.
 - `production/atelier-espresso.blend` : scène source avec texture embarquée.
 - `assets/espresso-source.mp4` : export de contrôle de la séquence originale, 160 images à 20 fps, huit secondes.
 - `scripts/render-coffee.py` et `scripts/encode-sequence.py` : production des images.
 - `production/frame-metadata.json` : état du café, du flux et de la caméra par image.
 - `production/encoding.json` : résolutions et poids des assets.
-- [Rapport de validation](reports/validation/README.md) : résultats, cinq captures desktop/mobile et vidéo de défilement réel.
+- [Rapport de correction](reports/correction/README.md) : preuves actuelles et points non réalisés.
+- [Ancien rapport de validation](reports/validation/README.md) : version précédente, conservée pour comparaison.
 
 ## Vérifications
 
@@ -67,12 +72,12 @@ npm run typecheck
 npm run build
 ```
 
-Le build refuse une séquence manquante ou incomplète. La recette Chromium a également réussi : cinq positions, retour aux mêmes pixels, pause sans dessin supplémentaire, mobile 390 px et tablette 768 px, changements de largeur, clavier, réduction des mouvements et chargement ralenti. Voir le rapport pour les preuves et les limites de ces contrôles.
+Le build refuse une séquence manquante ou incomplète. La recette Chromium contrôle les cinq positions, le retour aux mêmes pixels, la pause sans dessin supplémentaire, les changements de largeur, le clavier, la réduction des mouvements et le chargement ralenti. Les résultats effectivement obtenus figurent dans le rapport de correction ; un build réussi ne prouve pas la qualité visuelle.
 
 Le harness est reproductible avec une installation existante de Playwright et Chromium :
 
 ```sh
-BASE_URL=http://localhost:3000 node scripts/check-browser.cjs
+BASE_URL=http://localhost:3000 node scripts/check-correction-browser.cjs
 ```
 
 Les variables `PLAYWRIGHT_MODULE`, `CHROMIUM_EXECUTABLE` et `FFMPEG_EXECUTABLE` permettent d’utiliser des outils déjà installés. Ces outils de recette ne sont pas des dépendances du site.
@@ -94,4 +99,4 @@ La scène, les modèles, matériaux, éclairages et mouvements ont été créés
 
 Les cinq références fournies restent séparées dans `references/` et servent de direction artistique. Elles ne sont pas utilisées comme photogrammes. La séquence est un rendu CGI continu, avec une surface liquide et un flux déterministes ; ce n’est pas une simulation hydrodynamique ni une scène 3D manipulable dans le navigateur. Le débruitage atténue certains détails fins de la crema. Le résultat n’est pas présenté comme une prise de vue réelle.
 
-ATELIER COFFEE et ses profils de dégustation sont fictifs. Le site est une démonstration sans achat ni envoi de données.
+ATELIER COFFEE est une marque fictive. Le site est une démonstration sans achat ni envoi de données.

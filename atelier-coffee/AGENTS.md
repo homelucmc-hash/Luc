@@ -65,3 +65,11 @@ Lire les skills pertinents avant de modifier l’animation. Le skill local `atel
 - Conserver un cache de photogrammes décodés borné, une priorité à l’image demandée, un seul RAF de dessin, et le nettoyage des requêtes, observateurs et ImageBitmap.
 - Tester les effets en Strict Mode : pas de pin-spacer ou de ScrollTrigger dupliqué après remontage, changement de largeur ou changement du mode de mouvement.
 - Les checks TypeScript/build ne prouvent pas le versement. Vérifier les photogrammes réellement dessinés, les captures 0/25/50/75/100 %, l’arrêt et le retour arrière dans un navigateur réel.
+
+## Correction de la source et de l’activation
+
+- La séquence publique actuelle et `assets/espresso-source.mp4` proviennent de Blender. Ce sont des assets provisoires, pas une prise de vue réelle. Ne pas les renommer pour changer cette provenance et ne pas produire de nouveaux volumes 3D pour remplacer la vidéo réelle demandée.
+- La source attendue est `assets/espresso-live-action.mp4` : un seul plan réel où le flux et la montée du niveau dans la tasse sont visibles ensemble. Vérifier la source, les droits et les cinq photogrammes avant intégration. Si le téléchargement est bloqué, documenter le fichier manquant sans revendiquer le photoréalisme.
+- Préserver le moteur Canvas/GSAP. Une nouvelle source doit remplacer ensemble les variantes desktop/mobile, les posters et le manifeste ; une conversion échouée ne doit pas effacer les assets utilisés par le site.
+- Sans préférence de réduction, activer immédiatement le contrôle par scroll. Avec réduction, garder une image finale fixe, expliquer le choix et proposer une activation explicite contrastée. Le choix explicite dans la page prime sur les changements système ; ne pas animer de force pour masquer ce mode accessible.
+- La recette actuelle est `scripts/check-correction-browser.cjs` et ses preuves vont dans `reports/correction/`. Les rapports plus anciens restent historiques. Le refus du proxy Codex de joindre Vercel ne constitue pas une validation ni une panne avérée du site publié.

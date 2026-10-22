@@ -1,0 +1,164 @@
+FRAME 0 {
+  frame: 0,
+  target: 0,
+  count: 160,
+  progress: 0,
+  drawnProgress: 0,
+  variant: 'desktop',
+  decodedCount: 1,
+  loaded: null,
+  width: 1440,
+  height: 900,
+  motion: 'story-shell motion-active',
+  datasets: {
+    testid: 'coffee-sequence',
+    progress: '0.00000',
+    currentFrame: '0',
+    frameCount: '160',
+    motionMode: 'animated',
+    motionPreference: 'system',
+    scrollStart: '-0.001',
+    scrollEnd: '4500',
+    targetFrame: '0',
+    frame: '0',
+    requestedFrame: '0',
+    variant: 'desktop',
+    decodedCount: '1'
+  },
+  pixels: { min: 0, max: 255, range: 255, average: 25.222736625514145 },
+  imageHash: '3e2749bc2a10f186d6597a881a03aec83c3fea49e9c3d8545ad7689c00299135'
+}
+FRAME 0.25 {
+  frame: 40,
+  target: 40,
+  count: 160,
+  progress: 0.25,
+  drawnProgress: 0.25157,
+  variant: 'desktop',
+  decodedCount: 9,
+  loaded: null,
+  width: 1440,
+  height: 900,
+  motion: 'story-shell motion-active',
+  datasets: {
+    testid: 'coffee-sequence',
+    progress: '0.25157',
+    currentFrame: '40',
+    frameCount: '160',
+    motionMode: 'animated',
+    motionPreference: 'system',
+    scrollStart: '-0.001',
+    scrollEnd: '4500',
+    targetFrame: '40',
+    frame: '40',
+    requestedFrame: '40',
+    variant: 'desktop',
+    decodedCount: '9'
+  },
+  pixels: {
+    min: 0.6666666666666666,
+    max: 255,
+    range: 254.33333333333334,
+    average: 25.4097222222219
+  },
+  imageHash: '07bea1b37bd1fde1098cf3c5faf68a875e2684b9f978474d0ef39903ec25e45b'
+}
+FRAME 0.5 {
+  frame: 80,
+  target: 80,
+  count: 160,
+  progress: 0.5,
+  drawnProgress: 0.50314,
+  variant: 'desktop',
+  decodedCount: 16,
+  loaded: null,
+  width: 1440,
+  height: 900,
+  motion: 'story-shell motion-active',
+  datasets: {
+    testid: 'coffee-sequence',
+    progress: '0.50314',
+    currentFrame: '80',
+    frameCount: '160',
+    motionMode: 'animated',
+    motionPreference: 'system',
+    scrollStart: '-0.001',
+    scrollEnd: '4500',
+    targetFrame: '80',
+    frame: '80',
+    requestedFrame: '80',
+    variant: 'desktop',
+    decodedCount: '16'
+  },
+  pixels: { min: 0, max: 255, range: 255, average: 36.978395061728385 },
+  imageHash: '45a244a41f307922cfd09ea920341b5b51ba22ea313f4d9aafd836eb71ba1f90'
+}
+FRAME 0.75 {
+  frame: 119,
+  target: 119,
+  count: 160,
+  progress: 0.75,
+  drawnProgress: 0.74843,
+  variant: 'desktop',
+  decodedCount: 23,
+  loaded: null,
+  width: 1440,
+  height: 900,
+  motion: 'story-shell motion-active',
+  datasets: {
+    testid: 'coffee-sequence',
+    progress: '0.74843',
+    currentFrame: '119',
+    frameCount: '160',
+    motionMode: 'animated',
+    motionPreference: 'system',
+    scrollStart: '-0.001',
+    scrollEnd: '4500',
+    targetFrame: '119',
+    frame: '119',
+    requestedFrame: '119',
+    variant: 'desktop',
+    decodedCount: '23'
+  },
+  pixels: { min: 0, max: 255, range: 255, average: 35.27109053497943 },
+  imageHash: 'e1c3d386f444e77083258141cb0b3e785fb82d2aea3debfdf390dd4e70309f06'
+}
+FRAME 1 {
+  frame: 159,
+  target: 159,
+  count: 160,
+  progress: 1,
+  drawnProgress: 1,
+  variant: 'desktop',
+  decodedCount: 26,
+  loaded: null,
+  width: 1440,
+  height: 900,
+  motion: 'story-shell motion-active',
+  datasets: {
+    testid: 'coffee-sequence',
+    progress: '1.00000',
+    currentFrame: '159',
+    frameCount: '160',
+    motionMode: 'animated',
+    motionPreference: 'system',
+    scrollStart: '-0.001',
+    scrollEnd: '4500',
+    targetFrame: '159',
+    frame: '159',
+    requestedFrame: '159',
+    variant: 'desktop',
+    decodedCount: '26'
+  },
+  pixels: { min: 0, max: 255, range: 255, average: 35.27186213991772 },
+  imageHash: 'c116b900ad99b337444efef9ef629827846e1c2584b78b14828110f6927327e6'
+}
+REVERSE_PAUSE_PASS {"initialPause":{"duration":1200,"frame":0,"imageHash":"3e2749bc2a10f186d6597a881a03aec83c3fea49e9c3d8545ad7689c00299135","paintsDuringPause":0},"midPause":{"duration":1200,"frame":80,"imageHash":"45a244a41f307922cfd09ea920341b5b51ba22ea313f4d9aafd836eb71ba1f90","paintsDuringPause":0}}
+MOBILE_PASS {"width":390,"dimensions":{"width":390,"scroll":390},"frames":[0,159,40,80,119],"pause":{"duration":1200,"frame":80,"imageHash":"737afa70309e8d6b65429970d8c9b32754231605d296ea1fb1bbf98bd5f593a4","paintsDuringPause":0}}
+MOBILE_PASS {"width":768,"dimensions":{"width":768,"scroll":768},"frames":[0,159,40,80,119],"pause":{"duration":1200,"frame":80,"imageHash":"e32dba4df8edff640810409138d859a34fc861d2fa57653c90c22f64f90428fa","paintsDuringPause":0}}
+REDUCED_PASS {"initialFrameRequests":1,"reactivatedFrame":0,"pinCount":1}
+VIDEO_START real mouse.wheel, forward/reverse and measured pauses
+VIDEO_PASS {"traceSamples":168,"pause":{"duration":1500,"frame":80,"imageHash":"45a244a41f307922cfd09ea920341b5b51ba22ea313f4d9aafd836eb71ba1f90","paintsDuringPause":0},"finalPause":{"duration":1000,"frame":0,"imageHash":"3e2749bc2a10f186d6597a881a03aec83c3fea49e9c3d8545ad7689c00299135","paintsDuringPause":0}}
+SLOW_NETWORK_START explicitly intercepted latency/bandwidth test
+SLOW_NETWORK_PASS {"frames":160,"peakConcurrent":4,"renderSamples":333}
+SEQUENCE QA PASS {"firstDrawableMs":665,"reverse":true,"stop":true,"errors":[],"mobileWidths":["390","768"],"slowConcurrent":4,"slowFrames":160}

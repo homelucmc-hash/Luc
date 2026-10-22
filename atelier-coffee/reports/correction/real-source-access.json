@@ -1,0 +1,42 @@
+{
+  "checkedOn": "2026-10-22",
+  "status": "real_live_action_source_missing",
+  "networkResult": "HTTPS proxy tunnel refused with 403 Forbidden before origin access",
+  "officialCandidates": [4074925, 9399042, 35756026],
+  "officialLicenseVerified": false,
+  "officialCdnConnectivity": "blocked",
+  "downloadedCandidates": [],
+  "candidateFootageVisuallyReviewed": false,
+  "visibleLiveActionFillVerified": false,
+  "requiredFile": "assets/espresso-live-action.mp4",
+  "existingSourceRetained": "assets/espresso-source.mp4",
+  "existingSourceProvenance": "Blender Cycles CGI, as declared by existing manifest",
+  "publicAnimationChangedBySourceResearch": false,
+  "preparationToolCorrected": {
+    "path": "tools/prepare_sequence.py",
+    "desktopFrames": true,
+    "mobileFrames": true,
+    "posterAndFinal": true,
+    "manifestDimensions": true,
+    "defaultFramesPerVariant": 160,
+    "defaultSourceKind": "unknown",
+    "sourceKindIsUserDeclarationOnly": true,
+    "deletesExistingOutputFramesBeforeConversion": false,
+    "internalValidatedStaging": true,
+    "installationRollback": true
+  },
+  "technicalImportTests": {
+    "passed": 9,
+    "sourceKind": "cgi",
+    "framesPerVariant": 160,
+    "totalSequenceWebp": 320,
+    "posters": 2,
+    "desktopDimensions": [1280, 720],
+    "mobileDimensions": [800, 450],
+    "appAssetCheckAcceptedTemporaryFixture": true,
+    "publicAnimationUnchangedBySha256": true,
+    "report": "/tmp/atelier-coffee-import-56doczb1/test-report.json",
+    "output": "/tmp/atelier-coffee-import-56doczb1/complete"
+  },
+  "report": "reports/correction/real-source-access.md"
+}
