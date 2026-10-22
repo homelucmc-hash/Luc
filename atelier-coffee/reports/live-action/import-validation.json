@@ -1,0 +1,18 @@
+{
+  "desktop": {
+    "frames": 160,
+    "distinctFileHashes": 160,
+    "bytes": 18870208
+  },
+  "mobile": {
+    "frames": 160,
+    "distinctFileHashes": 160,
+    "bytes": 8745276
+  },
+  "sourceSha256": "086af25554b55c493b097e3daebcadf3319fbbe682ff4b2839cde0ee4407d6f6",
+  "manifestSha256": "d4596febdd4a539ff2000d3e0ae9bb7c75749150ca345d614f3bf99373e8987a",
+  "posterMatchesFirst": true,
+  "finalMatchesLast": true,
+  "clipStart": 0.0,
+  "clipDuration": 22.5
+}

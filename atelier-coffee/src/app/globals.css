@@ -43,9 +43,9 @@ h1, h2, h3, p, figure { margin: 0; }
 .sequence-canvas-wrapper.is-ready canvas { opacity: 1; }
 .sequence-canvas-wrapper img { width: 100%; height: 100%; object-fit: cover; }
 .sequence-canvas-wrapper .sequence-poster { position: absolute; inset: 0; z-index: 0; object-position: 50% center; }
-.scene-shade { position: absolute; z-index: 1; inset: 0; pointer-events: none; background: linear-gradient(90deg, #08070642, transparent 45%), linear-gradient(0deg, #080706ab, transparent 19%, transparent 85%, #08070626); }
+.scene-shade { position: absolute; z-index: 1; inset: 0; pointer-events: none; background: linear-gradient(90deg, #080706d9, #08070673 25%, transparent 50%), linear-gradient(0deg, #080706ab, transparent 19%, transparent 85%, #08070626); }
 .story-copy-container { position: absolute; z-index: 4; left: 6.6%; top: 34%; width: 38%; max-width: 440px; pointer-events: none; }
-.story-copy { position: absolute; top: 0; left: 0; width: 100%; opacity: 0; visibility: hidden; }
+.story-copy { position: absolute; top: 0; left: 0; width: 100%; opacity: 0; visibility: hidden; text-shadow: 0 1px 12px #080706b3; }
 .story-copy:first-child { opacity: 1; visibility: visible; }
 .story-copy-0, .story-copy-4 { will-change: opacity, transform; }
 .experience-heading { max-width: 340px; font: 400 clamp(28px, 2.7vw, 40px)/1.2 var(--serif); letter-spacing: -.025em; text-wrap: balance; }
@@ -94,9 +94,9 @@ h1, h2, h3, p, figure { margin: 0; }
   .site-header { height: 64px; padding-inline: 6%; }
   .brand, .brand-wordmark { gap: 6px; font-size: 14px; letter-spacing: .08em; }
   .header-link { font-size: 11px; }
-  .sequence-canvas-wrapper .sequence-poster { object-position: 68% center; }
+  .sequence-canvas-wrapper .sequence-poster { object-position: 52% center; }
   .scene-shade { background: linear-gradient(0deg, #080706c9, transparent 21%, transparent 84%, #08070638); }
-  .story-copy-container { top: 28%; left: 7%; width: 62%; max-width: 280px; }
+  .story-copy-container { top: auto; bottom: 185px; left: 7%; width: 62%; max-width: 280px; }
   .experience-heading { max-width: 250px; font-size: clamp(26px, 6.8vw, 34px); }
   .experience-final { font-size: 19px; letter-spacing: .09em; }
   .experience-controls { left: 7%; right: 7%; bottom: max(22px, env(safe-area-inset-bottom)); gap: 20px; }
@@ -106,6 +106,7 @@ h1, h2, h3, p, figure { margin: 0; }
   .experience-status { max-width: 280px; font-size: 12px; }
   .experience-activate { min-height: 50px; padding-inline: 20px; }
   .motion-reduced .experience-controls { right: 7%; }
+  .motion-reduced .story-copy-container { bottom: 205px; }
   .motion-reduced .experience-control-group { width: 100%; max-width: 355px; gap: 14px; padding: 18px; }
   .sequence-loading { left: 7%; bottom: 91px; font-size: 10px; }
   .sequence-error { left: 7%; right: 7%; bottom: 100px; max-width: none; }

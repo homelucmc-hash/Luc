@@ -49,7 +49,7 @@ Cliquer **Deploy**. Attendre le statut **Ready**, puis cliquer **Visit**. Le lie
 Dans la page Vercel, copier le domaine réellement attribué depuis **Domains**. Dans Chrome :
 
 1. Ouvrir le site et attendre l’image initiale.
-2. Défiler lentement : la première goutte devient un flux ; le niveau est bas vers 50 %, proche du plein vers 75 %, puis le flux s’arrête.
+2. Défiler lentement : la tasse est vide au début, deux jets apparaissent, le niveau monte entre 25 et 75 %, puis les jets s’arrêtent. La tasse finale contient un espresso et reste partiellement remplie.
 3. S’arrêter : l’image ne doit pas avancer seule.
 4. Remonter : le niveau doit redescendre et les mêmes étapes doivent revenir.
 5. Tester **Réduire les mouvements** : image finale fixe et bouton contrasté **Activer l’expérience**. Activer explicitement doit ramener au début et rétablir le scroll. Si le système demande déjà une réduction, ce mode fixe est le comportement initial attendu.
@@ -58,10 +58,10 @@ Dans la page Vercel, copier le domaine réellement attribué depuis **Domains**.
 Pour contrôler les images, ajouter ces chemins au vrai domaine Vercel :
 
 - `/espresso-frames/manifest.json` : doit indiquer `count: 160`.
-- `/espresso-frames/frame-0001.webp` : première goutte.
-- `/espresso-frames/frame-0081.webp` : tasse et niveau bas.
-- `/espresso-frames/frame-0120.webp` : niveau proche du plein.
-- `/espresso-frames/frame-0160.webp` : tasse pleine, flux arrêté.
+- `/espresso-frames/frame-0001.webp` : tasse vide dans le plan réel.
+- `/espresso-frames/frame-0081.webp` : deux jets et surface du café.
+- `/espresso-frames/frame-0120.webp` : niveau plus haut, jets actifs.
+- `/espresso-frames/frame-0160.webp` : espresso avec crema, jets arrêtés.
 - `/espresso-frames/mobile/frame-0160.webp` : variante mobile.
 
 L’application est servie à la racine du domaine, même si le code est dans le dossier GitHub `atelier-coffee/`. Ne pas ajouter `/atelier-coffee/` devant ces chemins et ne pas ajouter de rewrite global vers `index.html`.
@@ -82,7 +82,7 @@ Le lien fourni lors de la correction est `https://cafe-qs2yhnbvb-d7-13b5.vercel.
 
 Pour contrôler une nouvelle correction après fusion sur `main`, ouvrir votre projet Vercel → **Deployments**, sélectionner le déploiement **Ready** dont le commit correspond à la correction, puis **Visit**. Utiliser son domaine de production ou le nouveau lien indiqué : une ancienne URL de déploiement peut continuer à afficher l’ancienne version. Retirer `#story` ou cliquer le nom **ATELIER COFFEE** pour revenir au début du film.
 
-La validation du moteur sur le build de production est séparée de la qualité de la source : tant que `assets/espresso-live-action.mp4` manque, le site conserve le rendu Blender provisoire. La correction de l’interface ne le transforme pas en prise de vue réelle.
+La nouvelle source `assets/espresso-live-action.mp4` a été fournie sur GitHub, inspectée puis convertie : 160 vrais photogrammes dans chaque résolution, issus du même extrait de 22,5 secondes. Le rendu Blender public a été remplacé après vérification des jets et de la montée du niveau. Les preuves actuelles sont dans `reports/live-action/` ; les anciens rapports CGI restent historiques. La validation distante dépend toujours de l’accès au vrai domaine déployé.
 
 Le photoréalisme de la source reste perfectible ; l’hébergement HTTPS conserve les images actuelles et leur comportement, sans modifier leur qualité visuelle.
 

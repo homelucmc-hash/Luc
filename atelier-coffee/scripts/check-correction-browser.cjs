@@ -9,7 +9,7 @@
  * PLAYWRIGHT_MODULE: package name or absolute path to an existing Playwright install.
  * CHROMIUM_EXECUTABLE: existing browser binary; otherwise use system/bundled Chromium.
  * FFMPEG_EXECUTABLE: existing FFmpeg binary if Playwright's encoder is unavailable.
- * REPORT_DIR: artifact directory (default reports/correction/browser).
+ * REPORT_DIR: artifact directory (default reports/live-action/browser).
  * ATELIER_VIDEO=0 / ATELIER_SLOW=0: omit those explicitly reported test cases.
  *
  * This cloud workspace also has Playwright under /opt/codex/.../node_modules.
@@ -57,7 +57,7 @@ function initializeRuntime(){
   chromiumExecutable=process.env.CHROMIUM_EXECUTABLE||executable('chromium')||executable('chromium-browser')||chromium.executablePath();
 }
 const url=process.env.BASE_URL||process.env.ATELIER_URL||'http://127.0.0.1:3004';
-const outputDir=path.resolve(process.env.REPORT_DIR||process.env.ATELIER_REPORT_DIR||path.join(projectRoot,'reports/correction/browser'));
+const outputDir=path.resolve(process.env.REPORT_DIR||process.env.ATELIER_REPORT_DIR||path.join(projectRoot,'reports/live-action/browser'));
 fs.mkdirSync(outputDir,{recursive:true});
 const artifact=name=>path.join(outputDir,name);
 const stageSelector=process.env.ATELIER_STAGE||'[data-testid="coffee-sequence"]';
@@ -126,10 +126,11 @@ async function pinCount(page){
 }
 function localAssets(){
   const folder=path.join(projectRoot,'public/espresso-frames');
-  const manifest=JSON.parse(fs.readFileSync(path.join(folder,'manifest.json'),'utf8'));
+  const manifestBytes=fs.readFileSync(path.join(folder,'manifest.json'));
+  const manifest=JSON.parse(manifestBytes.toString('utf8'));
   assert(manifest.count===160&&manifest.ext==='webp','Local manifest must describe the complete 160-frame WebP sequence');
   execFileSync(process.execPath,[path.join(projectRoot,'scripts/check-assets.mjs')],{stdio:'pipe'});
-  return {manifestCount:manifest.count,variants:2,realFilesValidated:322,source:manifest.source??null};
+  return {manifestCount:manifest.count,variants:2,realFilesValidated:322,source:manifest.source??null,manifest,manifestSha256:crypto.createHash('sha256').update(manifestBytes).digest('hex')};
 }
 function observe(page,report){
   page.on('pageerror',e=>report.errors.push(e.message));
@@ -300,11 +301,12 @@ async function slowNetwork(browser){
 (async()=>{
  if(process.argv.includes('--smoke')){initializeRuntime();await videoSmoke();return;}
  let browser;
- const report={sourceStatus:'CGI provisional; live-action source absent. Browser tests prove scroll behavior, not photorealism.',url,startedAt:new Date().toISOString(),passed:false,normalImagesIntercepted:false,assets:null,configuration:{},skipped:[],desktop:{},mobile:{},errors:[],requestsFailed:[],badResponses:[]};
+ const report={sourceStatus:'Sequence provenance not read yet. Browser tests validate rendered scroll behavior; camera origin, licensing and visible filling require separate source review.',url,startedAt:new Date().toISOString(),passed:false,normalImagesIntercepted:false,assets:null,configuration:{},skipped:[],desktop:{},mobile:{},errors:[],requestsFailed:[],badResponses:[]};
  fs.writeFileSync(artifact('browser-report.json'),JSON.stringify(report,null,2));
  try{
   initializeRuntime();report.configuration={playwrightEntry,chromiumExecutable,videoEncoder};
   report.assets=localAssets();
+  report.sourceStatus=`Declared source: ${report.assets.source??'not specified in the manifest'}; source kind: ${report.assets.manifest.sourceKind??'unspecified'}. Browser tests validate scroll behavior; source origin, licensing and visible filling are reviewed separately.`;
   browser=await chromium.launch({headless:true,executablePath:chromiumExecutable,args:['--no-sandbox']});
   const page=await browser.newPage({viewport:{width:1440,height:900},reducedMotion:'no-preference'});
   observe(page,report);

@@ -1,3 +1,4 @@
-Ce répertoire est VOLONTAIREMENT vide. Ajouter une VRAIE séquence continue : frame-0001.webp ... frame-XXXX.webp et manifest.json.
-Les 5 images de références/visuels ne doivent jamais être copiées ici.
-Utiliser `python tools/prepare_sequence.py --input assets/espresso-source.mp4 --duration 8` puis `python tools/verify_sequence.py`.
+Séquence générée : 160 frames desktop 1280×720 et mobile 800×450.
+Source : Plan réel fourni par l’utilisateur : extraction d’un espresso, tasse vide puis montée du niveau et fin des jets.
+Provenance déclarée dans manifest.json ; droits et remplissage visible à vérifier manuellement.
+Le succès de l'import ne certifie ni le photoréalisme ni la progression du liquide.
