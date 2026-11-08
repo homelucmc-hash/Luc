@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#faf9f6">
+  <meta name="description" content="Des idées de repas avec ce qu'il reste dans votre frigo. Votre menu et vos courses, en toute simplicité.">
+  <title>À TABLE. — Votre frigo, votre prochain bon repas.</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='18' fill='%233e6048'/%3E%3Cpath d='M17 43C17 20 31 16 48 16c0 20-9 30-27 28m0 0 17-17' fill='none' stroke='%23f7f6f0' stroke-width='4' stroke-linecap='round'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="sr-only skip-link" href="#main">Aller au contenu</a>
+  <div class="app-shell">
+    <header class="app-header">
+      <a href="#idees" class="brand" aria-label="À TABLE, accueil">À TABLE<span class="brand-dot">.</span><span class="brand-asterisk" aria-hidden="true"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="3.3" stroke-linecap="round"><path d="M16 2v28M2 16h28M6 6l20 20M6 26 26 6"/></svg></span></a>
+      <nav class="top-nav" aria-label="Navigation principale">
+        <button class="nav-button is-active" data-view="idees" aria-current="page">Les recettes</button>
+        <button class="nav-button" data-view="semaine">Ma semaine<span class="nav-count" id="plan-count" hidden>0</span></button>
+        <button class="nav-button" data-view="courses">Mes courses<span class="nav-count" id="shopping-count" hidden>0</span></button>
+      </nav>
+      <div class="header-actions"><span class="saved-dot"></span><span id="save-status" role="status">Enregistré sur cet appareil</span></div>
+    </header>
+
+    <main id="main">
+      <section class="view" id="view-idees" aria-label="Vos idées de repas">
+        <div class="hero">
+          <div class="hero-content">
+            <p class="eyebrow"><span class="eyebrow-dot"></span>SIMPLE. BON. QUOTIDIEN.</p>
+            <h1>Votre frigo.<br>Votre prochain<br><span>bon repas.</span></h1>
+            <p class="hero-description">Tout commence avec ce que vous avez.<br>Le reste, c’est une bonne idée de recette.</p>
+            <div class="hero-actions"><button class="button primary hero-cta" data-open-products>Je compose mon frigo<span data-icon="arrow-right"></span></button><span class="hero-small-note">Moins de gaspillage.<br>Plus de plaisir.</span></div>
+          </div>
+          <div class="hero-media"><div class="hero-art" id="hero-art"></div><div class="hero-floating-note"><span data-icon="fridge"></span><p>Les meilleures idées<br>étaient déjà dans votre frigo.</p></div></div>
+        </div>
+        <div class="explore-heading"><div><p class="eyebrow">LE GOÛT DES BONNES IDÉES</p><h2>Qu’est-ce qu’on cuisine ?</h2></div><p>Les bons ingrédients.<br>La bonne inspiration.</p></div>
+        <nav class="recipe-categories" id="recipe-categories" aria-label="Catégories de recettes"></nav>
+        <div class="workspace">
+          <aside class="pantry-panel" aria-labelledby="pantry-title">
+            <div class="pantry-panel-top"><span class="pantry-kicker">LE POINT DE DÉPART</span><span data-icon="fridge"></span></div>
+            <div class="panel-title"><h2 id="pantry-title">Votre frigo.<br>Vos possibilités.</h2><span class="count-pill" id="pantry-count">0</span></div>
+            <p class="panel-description">Les placards comptent aussi.</p>
+            <form class="ingredient-form" id="ingredient-form">
+              <label class="sr-only" for="ingredient-input">Ajouter un ingrédient</label>
+              <input id="ingredient-input" name="ingredient" type="text" maxlength="240" placeholder="Un ingrédient…" list="ingredient-catalog" autocomplete="off">
+              <button type="submit" class="button icon-button primary" aria-label="Ajouter au frigo"><span data-icon="plus"></span></button>
+              <datalist id="ingredient-catalog"></datalist>
+            </form>
+            <button class="browse-products" id="browse-products" type="button"><span data-icon="search"></span>Explorer les produits<span class="catalog-count" id="catalog-count"></span><span data-icon="arrow-right"></span></button>
+            <div class="pantry-tags" id="pantry-tags" aria-live="polite"></div>
+            <div class="pantry-divider"></div>
+            <p class="eyebrow suggestion-title">LES ESSENTIELS DU QUOTIDIEN</p>
+            <div class="suggestion-list" id="suggestion-list"></div>
+            <div class="pantry-footer"><span data-icon="spark"></span><p>Plus vous ajoutez d’ingrédients,<br>plus les idées vous ressemblent.</p></div>
+            <button class="text-button" id="try-example" type="button">Essayer un frigo d’exemple <span aria-hidden="true">↗</span></button>
+          </aside>
+
+          <section class="results-panel" aria-labelledby="results-title">
+            <div class="results-heading"><div><h2 id="results-title">Toutes les bonnes idées.</h2><p class="results-summary" id="results-summary">Trouvez votre prochain coup de cœur.</p></div><span id="result-count" class="result-count"></span></div>
+            <div class="filter-bar">
+              <button class="filter-button" id="filter-vegetarian" aria-pressed="false"><span data-icon="leaf"></span>Végétarien</button>
+              <button class="filter-button" id="filter-ready" aria-pressed="false"><span data-icon="check"></span>J’ai tout</button>
+              <button class="filter-button" id="filter-favorites" aria-pressed="false"><span data-icon="heart"></span>Favoris</button>
+              <label class="sr-only" for="time-filter">Temps de préparation maximum</label>
+              <select class="select-field" id="time-filter"><option value="0">Tous les temps</option><option value="15">15 min maximum</option><option value="30">30 min maximum</option><option value="45">45 min maximum</option></select>
+            </div>
+            <div class="results-tools"><label class="search-field"><span data-icon="search"></span><span class="sr-only">Rechercher une recette</span><input id="recipe-search" type="search" placeholder="Une recette, une envie, un ingrédient…" maxlength="100"></label><label class="servings-control"><span data-icon="users"></span><select id="servings" aria-label="Nombre de personnes"><option value="1">1 personne</option><option value="2" selected>2 personnes</option><option value="3">3 personnes</option><option value="4">4 personnes</option><option value="5">5 personnes</option><option value="6">6 personnes</option></select></label></div>
+            <div class="sort-bar"><label for="recipe-sort">Trier les recettes</label><select class="select-field" id="recipe-sort"><option value="recommended">Pour vous</option><option value="time">Les plus rapides</option><option value="missing">Le moins de courses</option></select></div>
+            <div class="recipe-grid" id="recipe-grid"></div>
+            <div class="load-more-wrap"><button class="button secondary" id="recipe-load-more" type="button">Encore de bonnes idées<span data-icon="plus"></span></button></div>
+            <p class="results-note">Sel, poivre et huile sont les petits basiques à prévoir.</p>
+          </section>
+        </div>
+      </section>
+
+      <section class="view secondary-layout" id="view-semaine" aria-labelledby="week-title" hidden>
+        <div class="section-heading"><p class="eyebrow">UNE CHOSE DE MOINS À PENSER</p><h1 id="week-title">La question du dîner ?<br><span>Déjà réglée.</span></h1><p>Sept jours pour piocher des idées, prévoir un repas et simplifier les courses.</p></div>
+        <div class="week-toolbar"><p id="week-range"></p><button class="button secondary" data-go="idees"><span data-icon="plus"></span>Trouver une recette</button></div>
+        <div class="plan-grid" id="plan-grid"></div>
+        <div class="week-bottom"><span data-icon="cart"></span><div><h3>Le menu est fait. Les courses aussi.</h3><p>Les ingrédients qui vous manquent se regroupent automatiquement.</p></div><button class="button primary" data-go="courses">Voir mes courses<span data-icon="arrow-right"></span></button></div>
+      </section>
+
+      <section class="view secondary-layout" id="view-courses" aria-labelledby="shopping-title" hidden>
+        <div class="section-heading"><p class="eyebrow">POUR NE RIEN OUBLIER</p><h1 id="shopping-title">Les courses.<br><span>La tête légère.</span></h1><p>Ce qu’il manque pour vos repas, plus les petites choses du quotidien.</p></div>
+        <div class="shopping-layout">
+          <section class="shopping-panel" aria-label="Votre liste de courses">
+            <div class="shopping-heading"><h2>Ma liste<span id="shopping-progress" class="count-pill"></span></h2><button class="text-button" id="uncheck-all">Tout décocher</button></div>
+            <div id="shopping-items"></div>
+            <form class="ingredient-form manual-form" id="manual-form"><label class="sr-only" for="manual-input">Ajouter un article à la liste de courses</label><input id="manual-input" type="text" maxlength="100" placeholder="Du pain, du café, du savon…" required><button class="button primary icon-button" type="submit" aria-label="Ajouter à la liste"><span data-icon="plus"></span></button></form>
+            <div class="shopping-actions"><button class="button secondary" id="copy-shopping"><span data-icon="copy"></span>Copier la liste</button><button class="button secondary" id="download-shopping"><span data-icon="download"></span>Télécharger</button></div>
+          </section>
+          <aside class="shopping-summary"><div class="summary-icon" data-icon="calendar"></div><p class="eyebrow">DANS VOTRE MENU</p><h2>Les repas derrière<br>cette liste.</h2><div id="shopping-meals"></div><p class="shopping-help">Les ingrédients de votre frigo sont retirés de la liste. Vérifiez que vous en avez assez pour tous les repas.</p><button class="button ghost" data-go="semaine">Ajuster ma semaine<span data-icon="arrow-right"></span></button></aside>
+        </div>
+      </section>
+    </main>
+    <footer class="app-footer"><a class="brand footer-brand" href="#idees">À TABLE<span class="brand-dot">.</span></a><p>Bien manger commence avec une bonne idée.</p><span>Sans compte, à votre rythme.</span><details class="photo-credits"><summary>Photos &amp; crédits</summary><div id="photo-credits-content"></div></details></footer>
+  </div>
+  <div class="modal-backdrop" id="recipe-modal" hidden><section class="modal-dialog" role="dialog" aria-modal="true" aria-labelledby="modal-title" tabindex="-1"><div id="modal-body"></div></section></div>
+  <div class="modal-backdrop" id="product-modal" hidden><section class="modal-dialog product-dialog" role="dialog" aria-modal="true" aria-labelledby="product-modal-title" tabindex="-1"><header class="product-header"><div><p class="eyebrow">LE TOUR DES PLACARDS</p><h2 id="product-modal-title">Qu’est-ce que vous avez&nbsp;?</h2><p>Cochez les produits disponibles. Les idées de repas suivent.</p></div><button class="button icon-button ghost" data-close-products aria-label="Fermer le catalogue"><span data-icon="close"></span></button></header><div class="product-toolbar"><label class="search-field"><span data-icon="search"></span><span class="sr-only">Rechercher un produit</span><input id="product-search" type="search" placeholder="Un légume, une conserve, une épice…" maxlength="100" autocomplete="off"></label><div class="product-categories" id="product-categories" aria-label="Catégories de produits"></div></div><div class="product-grid" id="product-grid"></div><footer class="product-footer"><p>Les produits cochés rejoignent votre frigo.</p><button class="button primary" data-close-products>Voir mes idées de repas<span data-icon="arrow-right"></span></button></footer></section></div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <noscript><p>Activez JavaScript pour ajouter vos ingrédients et préparer vos repas. Toutes les données restent dans ce navigateur.</p></noscript>
+  <script src="recipes.js"></script>
+  <script src="catalog.js"></script>
+  <script src="recipes-expanded-a.js"></script>
+  <script src="recipes-expanded-b.js"></script>
+  <script src="engine.js"></script>
+  <script src="art.js"></script>
+  <script src="photos.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
