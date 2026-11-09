@@ -3,10 +3,10 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#faf9f6">
+  <meta name="theme-color" content="#fbfaf7">
   <meta name="description" content="Des idées de repas avec ce qu'il reste dans votre frigo. Votre menu et vos courses, en toute simplicité.">
   <title>À TABLE. — Votre frigo, votre prochain bon repas.</title>
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='18' fill='%233e6048'/%3E%3Cpath d='M17 43C17 20 31 16 48 16c0 20-9 30-27 28m0 0 17-17' fill='none' stroke='%23f7f6f0' stroke-width='4' stroke-linecap='round'/%3E%3C/svg%3E">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2064%2064%22%3E%3Crect%20width%3D%2264%22%20height%3D%2264%22%20rx%3D%2216%22%20fill%3D%22%23252b25%22%2F%3E%3Cg%20stroke%3D%22%23ff744f%22%20stroke-width%3D%224%22%20stroke-linecap%3D%22round%22%3E%3Cpath%20d%3D%22M32%2013v38M13%2032h38M19%2019l26%2026M19%2045l26-26%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -40,12 +40,14 @@
             <div class="pantry-panel-top"><span class="pantry-kicker">LE POINT DE DÉPART</span><span data-icon="fridge"></span></div>
             <div class="panel-title"><h2 id="pantry-title">Votre frigo.<br>Vos possibilités.</h2><span class="count-pill" id="pantry-count">0</span></div>
             <p class="panel-description">Les placards comptent aussi.</p>
+            <div class="pantry-input-wrap">
             <form class="ingredient-form" id="ingredient-form">
               <label class="sr-only" for="ingredient-input">Ajouter un ingrédient</label>
-              <input id="ingredient-input" name="ingredient" type="text" maxlength="240" placeholder="Un ingrédient…" list="ingredient-catalog" autocomplete="off">
+              <input id="ingredient-input" name="ingredient" type="text" maxlength="240" placeholder="Un ingrédient…" autocomplete="off" role="combobox" aria-autocomplete="list" aria-controls="ingredient-suggestions" aria-expanded="false" spellcheck="false">
               <button type="submit" class="button icon-button primary" aria-label="Ajouter au frigo"><span data-icon="plus"></span></button>
-              <datalist id="ingredient-catalog"></datalist>
             </form>
+            <ul class="ingredient-suggestions" id="ingredient-suggestions" role="listbox" aria-label="Ingrédients suggérés" hidden></ul>
+            </div>
             <button class="browse-products" id="browse-products" type="button"><span data-icon="search"></span>Explorer les produits<span class="catalog-count" id="catalog-count"></span><span data-icon="arrow-right"></span></button>
             <div class="pantry-tags" id="pantry-tags" aria-live="polite"></div>
             <div class="pantry-divider"></div>
